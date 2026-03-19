@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" fill="none">
+  <!-- Lowercase serif "g" -->
+  <path d="M130 42c-8-22-30-36-56-36C40 6 14 36 14 74c0 40 26 68 60 68 22 0 38-10 48-28v8c0 46-16 70-52 70-24 0-42-12-50-32l-8 18c12 24 34 38 62 38 48 0 72-32 72-90V48h-16v-6z" fill="#1a1a1a"/>
+  <path d="M74 126c-28 0-46-24-46-52s18-52 46-52c28 0 46 24 46 52s-18 52-46 52z" fill="#F8F2EB"/>
+  <path d="M74 118c-22 0-38-20-38-44s16-44 38-44 38 20 38 44-16 44-38 44z" fill="#1a1a1a" fill-opacity="0"/>
+  <!-- Magenta dot accent -->
+  <circle cx="138" cy="20" r="10" fill="#A90A7C"/>
+  <!-- Text "ganesha" -->
+  <text x="100" y="230" text-anchor="middle" font-family="'Marcellus', Georgia, serif" font-size="36" font-weight="400" fill="#1a1a1a" letter-spacing="3">ganesha</text>
+  <!-- Text "deva" in magenta -->
+  <text x="100" y="264" text-anchor="middle" font-family="'Marcellus', Georgia, serif" font-size="28" font-weight="400" fill="#A90A7C" letter-spacing="5">deva</text>
+</svg>

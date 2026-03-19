@@ -1,0 +1,283 @@
+/* ==========================================================================
+   Ganesha Deva -- Design System
+   Premium wellness aesthetic. Spacious, organic, serene.
+   ========================================================================== */
+
+/* Google Fonts
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Tenor+Sans&display=swap');
+
+/* Custom Properties
+   ========================================================================== */
+:root {
+  /* --- Palette --- */
+  --magenta: #A90A7C;
+  --teal: #8AC6D0;
+  --cream: #F8F2EB;
+  --dark: #1a1a1a;
+  --white: #FFFFFF;
+  --cream-dark: #EDE5DB;
+
+  /* --- Typography --- */
+  --font-heading: 'Marcellus', serif;
+  --font-ui: 'Tenor Sans', sans-serif;
+
+  /* --- Spacing scale --- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+
+  /* --- Transitions --- */
+  --ease-smooth: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* CSS Reset (minimal)
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Base Typography
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-heading);
+  color: var(--dark);
+  font-size: 18px;
+  line-height: 1.7;
+  background-color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings
+   ========================================================================== */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-size: clamp(44px, 5vw, 76px);
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: clamp(32px, 3.5vw, 50px);
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.25;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* Eyebrow / Label
+   ========================================================================== */
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* Links
+   ========================================================================== */
+a {
+  color: inherit;
+  text-decoration-skip-ink: auto;
+}
+
+/* Buttons
+   ========================================================================== */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 36px;
+  border-radius: 0 40px 40px 0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s var(--ease-smooth);
+  line-height: 1;
+}
+
+.btn-primary {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--magenta);
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: var(--magenta);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--teal);
+  transform: scale(1.05);
+}
+
+/* Layout -- Container
+   ========================================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+/* Layout -- Section Padding
+   ========================================================================== */
+.section {
+  padding: 60px 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 100px 0;
+  }
+}
+
+/* Wave Transitions
+   ========================================================================== */
+.wave-transition {
+  position: relative;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.wave-transition svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Screen Reader Only
+   ========================================================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Utility -- Text Colors
+   ========================================================================== */
+.text-magenta { color: var(--magenta); }
+.text-teal    { color: var(--teal); }
+.text-cream   { color: var(--cream); }
+.text-dark    { color: var(--dark); }
+.text-white   { color: var(--white); }
+
+/* Utility -- Background Colors
+   ========================================================================== */
+.bg-magenta { background-color: var(--magenta); }
+.bg-teal    { background-color: var(--teal); }
+.bg-cream   { background-color: var(--cream); }
+.bg-dark    { background-color: var(--dark); }
+.bg-white   { background-color: var(--white); }
+
+/* Responsive Breakpoints
+   --------------------------------------------------------------------------
+   Mobile:  default styles (< 768px)
+   Tablet:  @media (min-width: 768px)
+   Desktop: @media (min-width: 1024px)
+   Wide:    @media (min-width: 1440px)
+   ========================================================================== */
+
+/* Tablet adjustments */
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Wide screen adjustments */
+@media (min-width: 1440px) {
+  .container {
+    padding: 0;
+  }
+}
+
+/* Hover Media Query
+   Only apply hover effects on devices that support true hover.
+   ========================================================================== */
+@media (hover: hover) {
+  a:hover {
+    opacity: 0.85;
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    opacity: 1;
+  }
+}
+
+/* Reduced Motion
+   Respects user system preferences for reduced animations.
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
