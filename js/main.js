@@ -141,4 +141,43 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
+
+  // --- Areas stagger ---
+  gsap.from('.area-card', {
+    y: 40,
+    opacity: 0,
+    stagger: 0.15,
+    duration: 0.8,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.areas__grid',
+      start: 'top 80%'
+    }
+  });
+
+  // --- Lezioni stagger ---
+  gsap.from('.lezione-card', {
+    y: 40,
+    opacity: 0,
+    stagger: 0.1,
+    duration: 0.8,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.lezioni__grid',
+      start: 'top 80%'
+    }
+  });
+
+  // --- Percorsi stagger ---
+  gsap.from('.percorso-card', {
+    y: 40,
+    opacity: 0,
+    stagger: 0.15,
+    duration: 0.8,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.percorsi__grid',
+      start: 'top 80%'
+    }
+  });
 });

@@ -668,3 +668,289 @@ a {
     width: 55%;
   }
 }
+
+/* ========================================
+   LE 4 AREE (Categories)
+   ======================================== */
+
+.areas {
+  background: var(--cream);
+}
+
+.areas__header {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.areas__title {
+  color: var(--magenta);
+}
+
+.areas__subtitle {
+  color: var(--dark);
+  max-width: 700px;
+  margin: 16px auto 0;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.areas__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .areas__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.area-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 40px 32px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.5s var(--ease-smooth);
+  border: 1px solid rgba(169, 10, 124, 0.06);
+  display: block;
+}
+
+.area-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(169, 10, 124, 0.08);
+}
+
+.area-card__icon {
+  color: var(--magenta);
+  margin: 0 auto 20px;
+}
+
+.area-card__title {
+  color: var(--magenta);
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.area-card__desc {
+  color: var(--dark);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ========================================
+   LEZIONI
+   ======================================== */
+
+.lezioni {
+  background: var(--magenta);
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+  padding: 100px 0;
+}
+
+.lezioni__decoration {
+  position: absolute;
+  top: -100px;
+  right: -80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.lezioni__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.lezioni__eyebrow {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.lezioni__title {
+  color: var(--white);
+  margin-top: 8px;
+}
+
+.lezioni__subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.lezioni__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .lezioni__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lezioni__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.lezione-card {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  height: 220px;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .lezione-card {
+    height: 300px;
+  }
+}
+
+.lezione-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-smooth);
+}
+
+.lezione-card:hover img {
+  transform: scale(1.08);
+}
+
+.lezione-card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.65));
+  pointer-events: none;
+}
+
+.lezione-card__overlay h3 {
+  color: var(--white);
+  font-size: 22px;
+}
+
+.lezione-card__arrow {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.4s var(--ease-smooth);
+}
+
+.lezione-card:hover .lezione-card__arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   PERCORSI
+   ======================================== */
+
+.percorsi {
+  background: var(--cream);
+}
+
+.percorsi__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.percorsi__title {
+  color: var(--magenta);
+}
+
+.percorsi__subtitle {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--dark);
+}
+
+.percorsi__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .percorsi__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.percorso-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  transition: transform 0.5s var(--ease-smooth);
+}
+
+.percorso-card:hover {
+  transform: translateY(-4px);
+}
+
+.percorso-card__image {
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+.percorso-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-smooth);
+}
+
+.percorso-card:hover .percorso-card__image img {
+  transform: scale(1.05);
+}
+
+.percorso-card__body {
+  padding: 24px;
+}
+
+.percorso-card__body h3 {
+  color: var(--magenta);
+  margin-bottom: 8px;
+}
+
+.percorso-card__body p {
+  font-size: 14px;
+  color: var(--dark);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.percorso-card .btn-primary {
+  font-size: 12px;
+  padding: 10px 24px;
+}
