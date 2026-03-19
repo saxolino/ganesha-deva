@@ -427,7 +427,7 @@ body::after {
 }
 .contatti__inner { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
 @media (min-width: 768px) { .contatti__inner { grid-template-columns: 1fr 1fr; gap: 60px; } }
-.contatti__title { color: var(--white); font-weight: 300; }
+.contatti__title { color: var(--white); font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); }
 .contatti__form-wrap { background: var(--cream); color: var(--dark); padding: clamp(28px, 3vw, 44px); border-radius: 20px; }
 .contatti__form-title { color: var(--magenta); margin-bottom: 6px; }
 .contatti__form-desc { font-size: 1rem; color: #555; margin-bottom: 24px; line-height: 1.7; }
@@ -445,7 +445,7 @@ body::after {
 /* ==========================================================================
    NEWSLETTER
    ========================================================================== */
-.newsletter { background: var(--magenta); color: var(--white); padding: clamp(60px, 7vw, 100px) 0; }
+.newsletter { background: var(--magenta); color: var(--white); padding: clamp(60px, 7vw, 100px) 0; border-top: 1px solid rgba(255,255,255,0.08); }
 .newsletter__inner { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
 @media (min-width: 768px) { .newsletter__inner { grid-template-columns: 1fr 1fr; gap: 60px; } }
 .newsletter__title { color: var(--white); font-weight: 300; }
