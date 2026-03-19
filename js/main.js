@@ -64,6 +64,17 @@
     });
   });
 
+  /* ---------- Hero slideshow autoplay ---------- */
+  var heroSlides = document.querySelectorAll('.hero__slide');
+  if (heroSlides.length > 1) {
+    var currentSlide = 0;
+    setInterval(function() {
+      heroSlides[currentSlide].classList.remove('hero__slide--active');
+      currentSlide = (currentSlide + 1) % heroSlides.length;
+      heroSlides[currentSlide].classList.add('hero__slide--active');
+    }, 6000);
+  }
+
   /* ---------- Smooth scroll ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(function(link) {
     link.addEventListener('click', function(e) {
@@ -130,8 +141,8 @@
   gsap.registerPlugin(ScrollTrigger);
 
   /* ---------- Hero parallax ---------- */
-  if (document.querySelector('.hero__bg img')) {
-    gsap.to('.hero__bg img', {
+  if (document.querySelector('.hero__slideshow')) {
+    gsap.to('.hero__slideshow', {
       y: '15%', ease: 'none',
       scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
     });
