@@ -1342,3 +1342,148 @@ a {
 .newsletter .btn-primary {
   background: var(--teal);
 }
+
+/* ========================================
+   PAGE HERO
+   ======================================== */
+
+.page-hero {
+  position: relative;
+  padding: 140px 0 80px;
+  overflow: hidden;
+}
+
+.page-hero--teal {
+  background: var(--teal);
+}
+
+.page-hero__title {
+  color: var(--white);
+  text-align: center;
+}
+
+.page-hero__subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  max-width: 600px;
+  margin: 16px auto 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.page-hero__wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+}
+
+/* ========================================
+   PAGE CONTENT
+   ======================================== */
+
+.page-content {
+  background: var(--cream);
+}
+
+.page-content__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.page-content__header h2 {
+  color: var(--magenta);
+  margin-top: 8px;
+}
+
+/* ========================================
+   LEZIONI PAGE GRID
+   ======================================== */
+
+.lezioni-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.lezioni-page__grid .lezione-card {
+  height: 320px;
+}
+
+@media (max-width: 1023px) {
+  .lezioni-page__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .lezioni-page__grid {
+    grid-template-columns: 1fr;
+  }
+  .lezioni-page__grid .lezione-card {
+    height: 240px;
+  }
+}
+
+/* ========================================
+   PERCORSI PAGE ALTERNATING LAYOUT
+   ======================================== */
+
+.alternating-list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.alternating-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.alternating-item:nth-child(even) .alternating-item__image {
+  order: 2;
+}
+
+.alternating-item:nth-child(even) .alternating-item__text {
+  order: 1;
+}
+
+.alternating-item__image {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.alternating-item__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.alternating-item__text h3 {
+  color: var(--magenta);
+  font-size: clamp(24px, 2.5vw, 32px);
+  margin-bottom: 16px;
+}
+
+.alternating-item__text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--dark);
+  margin-bottom: 24px;
+}
+
+@media (max-width: 767px) {
+  .alternating-item {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .alternating-item:nth-child(even) .alternating-item__image,
+  .alternating-item:nth-child(even) .alternating-item__text {
+    order: unset;
+  }
+}
