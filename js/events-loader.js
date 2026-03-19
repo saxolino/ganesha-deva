@@ -111,6 +111,70 @@
     container.appendChild(frag);
   }
 
+  // Homepage events carousel template (image cards in horizontal scroll)
+  function renderEventsCarousel(events, containerId) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+
+    // Build carousel wrapper
+    var wrap = el('div', { 'class': 'carousel-wrap' });
+    var carousel = el('div', { 'class': 'carousel', 'data-carousel': '' });
+
+    events.forEach(function(evt) {
+      var date = parseDate(evt.data);
+
+      var card = el('div', { 'class': 'evento-carousel-card' });
+
+      var imgWrap = el('div', { 'class': 'evento-carousel-card__image' });
+      var img = document.createElement('img');
+      img.src = evt.immagine;
+      img.alt = evt.titolo;
+      imgWrap.appendChild(img);
+
+      var badge = el('span', { 'class': 'evento-carousel-card__badge' }, date.day + ' ' + date.month);
+      imgWrap.appendChild(badge);
+
+      var body = el('div', { 'class': 'evento-carousel-card__body' });
+      body.appendChild(el('span', { 'class': 'evento-carousel-card__location' }, evt.luogo));
+      body.appendChild(el('h3', null, evt.titolo));
+      body.appendChild(el('p', { 'class': 'evento-carousel-card__period' }, evt.periodo));
+      body.appendChild(el('p', { 'class': 'evento-carousel-card__desc' }, evt.descrizione));
+
+      card.appendChild(imgWrap);
+      card.appendChild(body);
+      carousel.appendChild(card);
+    });
+
+    wrap.appendChild(carousel);
+
+    // Nav buttons
+    var nav = el('div', { 'class': 'carousel-nav' });
+    var prevBtn = document.createElement('button');
+    prevBtn.className = 'carousel-btn';
+    prevBtn.setAttribute('data-carousel-prev', '');
+    prevBtn.setAttribute('aria-label', 'Precedente');
+    prevBtn.innerHTML = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 4l-4 4 4 4"/></svg>';
+    var nextBtn = document.createElement('button');
+    nextBtn.className = 'carousel-btn';
+    nextBtn.setAttribute('data-carousel-next', '');
+    nextBtn.setAttribute('aria-label', 'Successivo');
+    nextBtn.innerHTML = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>';
+    nav.appendChild(prevBtn);
+    nav.appendChild(nextBtn);
+    wrap.appendChild(nav);
+
+    container.textContent = '';
+    container.appendChild(wrap);
+
+    // Wire up carousel buttons
+    var scrollAmt = function() {
+      var first = carousel.children[0];
+      return first ? first.offsetWidth + 20 : 340;
+    };
+    nextBtn.addEventListener('click', function() { carousel.scrollBy({ left: scrollAmt(), behavior: 'smooth' }); });
+    prevBtn.addEventListener('click', function() { carousel.scrollBy({ left: -scrollAmt(), behavior: 'smooth' }); });
+  }
+
   // Load and render
   window.loadEvents = function(containerId, jsonPath, template) {
     fetch(jsonPath)
@@ -123,6 +187,8 @@
           renderEventsList(active, containerId);
         } else if (template === 'grid') {
           renderEventsGrid(active, containerId);
+        } else if (template === 'carousel') {
+          renderEventsCarousel(active, containerId);
         }
       })
       .catch(function(err) {
