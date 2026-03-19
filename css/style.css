@@ -415,7 +415,7 @@ body::after {
   display: block; text-decoration: none; transition: all 0.6s var(--ease);
 }
 .percorso-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
-.percorso-card__image { overflow: hidden; aspect-ratio: 16/10; }
+.percorso-card__image { overflow: hidden; aspect-ratio: 3/2; }
 .percorso-card__image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease); }
 .percorso-card:hover .percorso-card__image img { transform: scale(1.05); }
 .percorso-card__body { padding: clamp(20px, 2.5vw, 32px); }
@@ -455,12 +455,12 @@ body::after {
 
 /* Eventi carousel cards */
 .evento-carousel-card {
-  flex-shrink: 0; width: clamp(280px, 36vw, 400px);
+  flex-shrink: 0;
   background: var(--white); border-radius: 16px; overflow: hidden;
-  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+  transition: all 0.6s var(--ease);
 }
-.evento-carousel-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
-.evento-carousel-card__image { position: relative; overflow: hidden; aspect-ratio: 16/10; }
+.evento-carousel-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
+.evento-carousel-card__image { position: relative; overflow: hidden; aspect-ratio: 3/2; }
 .evento-carousel-card__image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease); }
 .evento-carousel-card:hover .evento-carousel-card__image img { transform: scale(1.06); }
 .evento-carousel-card__badge {
@@ -469,7 +469,7 @@ body::after {
   padding: 5px 14px; border-radius: 20px;
   font-family: var(--font-ui); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
 }
-.evento-carousel-card__body { padding: 20px 24px; }
+.evento-carousel-card__body { padding: clamp(16px, 2vw, 24px); }
 .evento-carousel-card__location {
   font-family: var(--font-ui); font-size: 0.65rem; letter-spacing: 0.12em;
   color: var(--teal-deep); text-transform: uppercase; display: block; margin-bottom: 4px;
@@ -516,7 +516,7 @@ body::after {
 .blog__subtitle { color: #555; margin-top: 12px; font-size: 1rem; }
 .blog-card { background: var(--white); border-radius: 16px; overflow: hidden; transition: all 0.6s var(--ease); flex-shrink: 0; width: clamp(300px, 38vw, 420px); }
 .blog-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
-.blog-card__image { overflow: hidden; height: 260px; }
+.blog-card__image { overflow: hidden; aspect-ratio: 3/2; }
 .blog-card__image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease); }
 .blog-card:hover .blog-card__image img { transform: scale(1.05); }
 .blog-card__body { padding: clamp(20px, 2.5vw, 32px); }
@@ -718,7 +718,11 @@ body::after {
   background: rgba(169,10,124,0.08); border-color: rgba(169,10,124,0.12); color: var(--magenta);
 }
 .percorsi .carousel-btn:hover,
-.viaggi .carousel-btn:hover { background: rgba(169,10,124,0.15); }
+.viaggi .carousel-btn:hover,
+.blog .carousel-btn:hover { background: rgba(169,10,124,0.15); }
+
+/* Blog carousel nav on cream-dark bg */
+.blog .carousel-btn { background: rgba(169,10,124,0.08); border-color: rgba(169,10,124,0.12); color: var(--magenta); }
 
 /* Carousel dots */
 .carousel-dots {
@@ -737,8 +741,12 @@ body::after {
 /* Lezioni carousel items */
 .lezioni .carousel > .lezione-card { width: clamp(280px, 32vw, 380px); height: clamp(260px, 32vw, 340px); }
 
-/* Percorsi carousel items */
-.percorsi .carousel > .percorso-card { width: clamp(300px, 40vw, 460px); }
+/* --- UNIFIED CARD WIDTH for Percorsi, Eventi, Blog carousels --- */
+.percorsi .carousel > .percorso-card,
+.eventi .carousel .evento-carousel-card,
+.blog .carousel > .blog-card {
+  width: clamp(300px, 34vw, 380px);
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
