@@ -94,7 +94,7 @@
       var card = el('div', { 'class': 'evento-card' });
 
       var imgWrap = el('div', { 'class': 'evento-card__image' });
-      imgWrap.appendChild(el('img', { src: evt.immagine, alt: evt.titolo, loading: 'lazy' }));
+      imgWrap.appendChild(el('img', { src: evt.immagine, alt: evt.titolo, loading: 'lazy', decoding: 'async' }));
       imgWrap.appendChild(el('span', { 'class': 'evento-card__badge' }, date.day + ' ' + date.month));
 
       var body = el('div', { 'class': 'evento-card__body' });
@@ -144,7 +144,7 @@
           var card = el('div', { 'class': 'viaggio-card' });
 
           var imgWrap = el('div', { 'class': 'viaggio-card__image' });
-          imgWrap.appendChild(el('img', { src: v.immagine, alt: v.titolo, loading: 'lazy' }));
+          imgWrap.appendChild(el('img', { src: v.immagine, alt: v.titolo, loading: 'lazy', decoding: 'async' }));
 
           var body = el('div', { 'class': 'viaggio-card__body' });
           body.appendChild(el('h3', null, v.titolo));

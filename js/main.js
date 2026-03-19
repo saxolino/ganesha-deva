@@ -26,6 +26,11 @@
     });
   }
 
+  // Inner pages: header starts scrolled (no hero)
+  if (header && !document.querySelector('.hero')) {
+    header.classList.add('site-header--scrolled');
+  }
+
   // --- Mobile menu toggle ---
   const hamburger = document.querySelector('.nav__hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
@@ -221,5 +226,37 @@ document.addEventListener('DOMContentLoaded', function() {
     stagger: 0.2,
     duration: 0.8,
     scrollTrigger: { trigger: '.newsletter', start: 'top 85%' }
+  });
+
+  // --- Magnetic cursor on buttons (desktop only) ---
+  if (window.matchMedia('(hover: hover)').matches && typeof gsap !== 'undefined') {
+    document.querySelectorAll('.btn-primary, .btn-secondary').forEach(function(btn) {
+      var xTo = gsap.quickTo(btn, 'x', { duration: 0.4, ease: 'power3.out' });
+      var yTo = gsap.quickTo(btn, 'y', { duration: 0.4, ease: 'power3.out' });
+
+      btn.addEventListener('mousemove', function(e) {
+        var rect = btn.getBoundingClientRect();
+        var x = e.clientX - rect.left - rect.width / 2;
+        var y = e.clientY - rect.top - rect.height / 2;
+        xTo(x * 0.3);
+        yTo(y * 0.3);
+      });
+
+      btn.addEventListener('mouseleave', function() {
+        xTo(0);
+        yTo(0);
+      });
+    });
+  }
+
+  // --- Smooth scroll for anchor links ---
+  document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   });
 });
