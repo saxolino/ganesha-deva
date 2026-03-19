@@ -252,45 +252,8 @@
         <h2 class="percorsi__title">Un Percorso Che Amplifica Le Tue Conoscenze</h2>
         <p class="percorsi__subtitle">Attraverso i nostri percorsi scopri come liberare il tuo pieno potenziale e raggiungere benessere fisico e mentale.</p>
       </div>
-      <div class="carousel-wrap">
-        <div class="carousel" data-carousel>
-          <a href="percorsi.html" class="percorso-card">
-            <div class="percorso-card__image"><img src="img/percorsi/theta-healing.jpg" alt="Theta Healing"></div>
-            <div class="percorso-card__body">
-              <h3>Theta Healing</h3>
-              <p>Theta Healing e una pratica di guarigione energetica che lavora sulle credenze profonde per promuovere il benessere fisico e mentale.</p>
-              <span class="btn btn--primary">Scopri</span>
-            </div>
-          </a>
-          <a href="percorsi.html" class="percorso-card">
-            <div class="percorso-card__image"><img src="img/percorsi/7-chakra.jpg" alt="I 7 Chakra"></div>
-            <div class="percorso-card__body">
-              <h3>I 7 Chakra</h3>
-              <p>I sette chakra sono centri energetici nel corpo umano, che corrispondono a diversi aspetti della vita e della coscienza.</p>
-              <span class="btn btn--primary">Scopri</span>
-            </div>
-          </a>
-          <a href="percorsi.html" class="percorso-card">
-            <div class="percorso-card__image"><img src="img/percorsi/viaggio-eroe.jpg" alt="Il Viaggio dell'Eroe"></div>
-            <div class="percorso-card__body">
-              <h3>Il Viaggio dell'Eroe</h3>
-              <p>L'archetipo del viaggio dell'eroe: affrontare sfide, superare prove, ritornare trasformato e raggiungere l'illuminazione.</p>
-              <span class="btn btn--primary">Scopri</span>
-            </div>
-          </a>
-          <a href="percorsi.html" class="percorso-card">
-            <div class="percorso-card__image"><img src="img/percorsi/bagno-gong.jpg" alt="Bagno di Gong"></div>
-            <div class="percorso-card__body">
-              <h3>Bagno di Gong</h3>
-              <p>Il Bagno di Gong e un esperienza di Unione fisica e spirituale attraverso le vibrazioni sonore profonde.</p>
-              <span class="btn btn--primary">Scopri</span>
-            </div>
-          </a>
-        </div>
-        <div class="carousel-nav">
-          <button class="carousel-btn" data-carousel-prev aria-label="Precedente"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 4l-4 4 4 4"/></svg></button>
-          <button class="carousel-btn" data-carousel-next aria-label="Successivo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg></button>
-        </div>
+      <div id="percorsi-list">
+        <!-- Caricato da percorsi.json -->
       </div>
     </div>
   </section>
@@ -345,16 +308,8 @@
         <h2 class="blog__title">Notizie Dal Mondo Ganesha</h2>
         <p class="blog__subtitle">Scopri gli ultimi aggiornamenti dal mondo dello Yoga e della spiritualit&agrave; con il nostro blog</p>
       </div>
-      <div class="blog__grid">
-        <article class="blog-card">
-          <div class="blog-card__image">
-            <img src="img/hero/cala-rossa.jpg" alt="Blog post" loading="lazy" decoding="async">
-          </div>
-          <div class="blog-card__body">
-            <p class="blog-card__excerpt">Sono felicissima di darvi il benvenuto sul blog di Ganesha Deva, lo studio di yoga e viaggi esperienziali che ho fondato</p>
-            <a href="#" class="btn btn--secondary">Scopri</a>
-          </div>
-        </article>
+      <div id="blog-list">
+        <!-- Caricato da blog.json -->
       </div>
       <div class="blog__cta">
         <a href="#" class="btn btn--primary">Vedi Gli Articoli</a>
@@ -451,11 +406,13 @@
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="js/events-loader.js"></script>
+  <script src="js/content-loader.js"></script>
   <script src="js/main.js"></script>
   <script>
-    loadEvents('eventi-list', 'data/events.json', 'carousel');
-    loadViaggi('viaggi-list', 'data/viaggi.json');
+    loadEventi('eventi-list', 'carousel');
+    loadPercorsi('percorsi-list', 'carousel');
+    loadViaggi('viaggi-list');
+    loadBlog('blog-list', 'carousel');
   </script>
 </body>
 </html>

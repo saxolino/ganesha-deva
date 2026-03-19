@@ -1,0 +1,30 @@
+[
+  {
+    "id": "theta-healing",
+    "titolo": "Theta Healing",
+    "descrizione": "Theta Healing e una pratica di guarigione energetica che lavora sulle credenze profonde per promuovere il benessere fisico e mentale.",
+    "immagine": "img/percorsi/theta-healing.jpg",
+    "attivo": true
+  },
+  {
+    "id": "7-chakra",
+    "titolo": "I 7 Chakra",
+    "descrizione": "I sette chakra sono centri energetici nel corpo umano, che corrispondono a diversi aspetti della vita e della coscienza.",
+    "immagine": "img/percorsi/7-chakra.jpg",
+    "attivo": true
+  },
+  {
+    "id": "viaggio-eroe",
+    "titolo": "Il Viaggio dell'Eroe",
+    "descrizione": "L'archetipo del viaggio dell'eroe: affrontare sfide, superare prove, ritornare trasformato e raggiungere l'illuminazione.",
+    "immagine": "img/percorsi/viaggio-eroe.jpg",
+    "attivo": true
+  },
+  {
+    "id": "bagno-gong",
+    "titolo": "Bagno di Gong",
+    "descrizione": "Il Bagno di Gong e un esperienza di Unione fisica e spirituale attraverso le vibrazioni sonore profonde.",
+    "immagine": "img/percorsi/bagno-gong.jpg",
+    "attivo": true
+  }
+]
