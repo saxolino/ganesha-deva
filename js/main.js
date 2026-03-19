@@ -64,6 +64,29 @@
     });
   });
 
+  /* ---------- Video play/pause ---------- */
+  document.querySelectorAll('.video-play').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var video = btn.parentElement.querySelector('video');
+      if (!video) return;
+      if (video.paused) {
+        video.muted = false;
+        video.play();
+        btn.classList.add('is-hidden');
+      } else {
+        video.pause();
+        btn.classList.remove('is-hidden');
+      }
+    });
+    var video = btn.parentElement.querySelector('video');
+    if (video) {
+      video.addEventListener('click', function() {
+        video.pause();
+        btn.classList.remove('is-hidden');
+      });
+    }
+  });
+
   /* ---------- Hero slideshow autoplay ---------- */
   var heroSlides = document.querySelectorAll('.hero__slide');
   if (heroSlides.length > 1) {
