@@ -301,28 +301,34 @@ body::after {
 /* ==========================================================================
    ENTRA NEL MONDO GANESHA
    ========================================================================== */
-.mondo { background: var(--cream); overflow: hidden; }
-.mondo__title { color: var(--magenta); text-align: center; margin-bottom: clamp(32px, 4vw, 56px); }
+.mondo { background: var(--cream); overflow: hidden; padding-bottom: clamp(40px, 5vw, 72px); }
+.mondo__title { color: var(--magenta); text-align: center; margin-bottom: clamp(28px, 3.5vw, 48px); }
 .mondo__carousel {
   padding-left: clamp(20px, 4vw, 48px);
   padding-right: clamp(20px, 4vw, 48px);
+  gap: 24px;
 }
 .mondo__card {
-  flex-shrink: 0; width: clamp(200px, 22vw, 260px);
-  border-radius: 16px; overflow: hidden; display: block; text-decoration: none;
-  background: var(--white);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  flex-shrink: 0; width: 120px;
+  display: flex; flex-direction: column; align-items: center;
+  text-decoration: none; text-align: center;
   transition: all 0.5s var(--ease);
 }
-.mondo__card:hover { transform: translateY(-8px); box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+.mondo__card:hover { transform: translateY(-4px); }
 .mondo__card img {
-  width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;
-  transition: transform 0.8s var(--ease);
+  width: 100px; height: 100px; border-radius: 50%; object-fit: cover; display: block;
+  border: 2.5px solid var(--white);
+  box-shadow: 0 4px 20px rgba(169,10,124,0.1);
+  transition: all 0.6s var(--ease);
 }
-.mondo__card:hover img { transform: scale(1.06); }
-.mondo__card-body { padding: 16px 18px; }
-.mondo__card-body h4 { color: var(--magenta); font-size: 1rem; margin-bottom: 4px; }
-.mondo__card-body .eyebrow { color: var(--teal-deep); font-size: 0.55rem; }
+.mondo__card:hover img {
+  transform: scale(1.08);
+  box-shadow: 0 8px 32px rgba(169,10,124,0.18);
+  border-color: var(--magenta);
+}
+.mondo__card-body { padding: 12px 0 0; }
+.mondo__card-body h4 { color: var(--dark); font-family: var(--font-display); font-size: 0.85rem; font-weight: 400; margin-bottom: 2px; line-height: 1.25; }
+.mondo__card-body .eyebrow { color: var(--magenta); font-size: 0.5rem; letter-spacing: 0.2em; }
 
 /* ==========================================================================
    4 AREE
