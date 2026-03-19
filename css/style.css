@@ -188,9 +188,12 @@ a {
   position: relative;
   line-height: 0;
   overflow: hidden;
+  margin-top: -1px;
+  margin-bottom: -1px;
 }
 
-.wave-transition svg {
+.wave-transition svg,
+.wave-transition img {
   width: 100%;
   height: auto;
   display: block;
