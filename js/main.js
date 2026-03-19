@@ -57,3 +57,88 @@
     });
   }
 })();
+
+// ========================================
+// GSAP ANIMATIONS
+// ========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Only animate if GSAP is loaded and user allows motion
+  if (typeof gsap === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // --- Hero animations ---
+  var heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+  heroTl
+    .from('.hero__eyebrow', { y: 20, opacity: 0, duration: 0.8 })
+    .from('.hero__title', { y: 40, opacity: 0, duration: 1.2 }, '-=0.4')
+    .from('.hero__cta', { y: 20, opacity: 0, duration: 0.8 }, '-=0.6');
+
+  // Hero parallax
+  gsap.to('.hero__bg img', {
+    y: '20%',
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.hero',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+
+  // --- Intro Dayana animations ---
+  // Clip-path reveal on image
+  gsap.from('.intro__image-wrap', {
+    clipPath: 'inset(50% 50% 50% 50%)',
+    duration: 1.2,
+    ease: 'power3.inOut',
+    scrollTrigger: {
+      trigger: '.intro',
+      start: 'top 75%'
+    }
+  });
+
+  // Offset border reveal
+  gsap.from('.intro__image-wrap::after', {
+    opacity: 0,
+    delay: 0.4,
+    duration: 0.8,
+    scrollTrigger: {
+      trigger: '.intro',
+      start: 'top 75%'
+    }
+  });
+
+  // Text stagger reveal
+  gsap.from('.intro__text > *', {
+    y: 30,
+    opacity: 0,
+    stagger: 0.2,
+    duration: 0.8,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.intro__text',
+      start: 'top 80%'
+    }
+  });
+
+  // --- Generic section reveal (reusable) ---
+  document.querySelectorAll('.section').forEach(function(section) {
+    var children = section.querySelectorAll('.reveal');
+    if (children.length) {
+      gsap.from(children, {
+        y: 30,
+        opacity: 0,
+        stagger: 0.15,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 80%'
+        }
+      });
+    }
+  });
+});
