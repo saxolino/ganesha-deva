@@ -220,7 +220,7 @@
           body.appendChild(loc);
 
           body.appendChild(el('p', null, v.descrizione));
-          body.appendChild(el('a', { href: 'viaggi.html', 'class': 'btn-primary' }, 'Scopri'));
+          body.appendChild(el('a', { href: 'viaggi.html', 'class': 'btn btn--primary' }, 'Scopri'));
 
           card.appendChild(imgWrap);
           card.appendChild(body);
