@@ -234,19 +234,128 @@
   </section>
 
   <!-- ========================================
-       EVENTI (Task 5)
+       EVENTI
        ======================================== -->
-  <!-- Eventi section will be added here -->
+  <div class="wave-transition">
+    <img src="img/decorations/wave-4.svg" alt="">
+  </div>
+
+  <section class="eventi section" id="eventi">
+    <div class="container">
+      <div class="eventi__header">
+        <span class="eyebrow eventi__eyebrow">Prossimi Eventi</span>
+        <h2 class="eventi__title">Esperienze Esclusive: Eventi Speciali per il Benessere e la Consapevolezza</h2>
+        <p class="eventi__subtitle">Esplora il benessere attraverso i nostri eventi, che offrono una variet&agrave; di argomenti come meditazione, nutrizione e gestione dello stress.</p>
+      </div>
+      <div id="eventi-list" class="eventi__list">
+        <!-- Populated by events-loader.js -->
+      </div>
+      <div class="eventi__cta">
+        <a href="https://wa.me/393XXXXXXXXX" class="btn-primary" target="_blank" rel="noopener">Contattaci su WhatsApp</a>
+      </div>
+    </div>
+  </section>
 
   <!-- ========================================
-       VIAGGI (Task 5)
+       VIAGGI
        ======================================== -->
-  <!-- Viaggi section will be added here -->
+  <section class="viaggi section" id="viaggi">
+    <div class="container">
+      <div class="viaggi__header">
+        <h2 class="viaggi__title">Un Percorso Che Amplifica Le Tue Conoscenze</h2>
+        <p class="viaggi__subtitle">Esplora il mondo con viaggi esperienziali unici, integrando yoga, movimento e meditazione, guidati da professionisti del benessere e viaggio.</p>
+      </div>
+      <div id="viaggi-list">
+        <!-- Populated by events-loader.js -->
+      </div>
+      <div class="viaggi__cta">
+        <a href="viaggi.html" class="btn-primary">Scopri i nostri Viaggi</a>
+      </div>
+    </div>
+  </section>
 
   <!-- ========================================
-       CONTATTI (Task 5)
+       BLOG
        ======================================== -->
-  <!-- Contatti section will be added here -->
+  <section class="blog section" id="blog">
+    <div class="container">
+      <div class="blog__header">
+        <h2 class="blog__title">Notizie Dal Mondo Ganesha</h2>
+        <p class="blog__subtitle">Scopri gli ultimi aggiornamenti dal mondo dello Yoga e della spiritualit&agrave; con il nostro blog</p>
+      </div>
+      <div class="blog__grid">
+        <article class="blog-card">
+          <div class="blog-card__image">
+            <img src="img/hero/cala-rossa.jpg" alt="Blog post" loading="lazy">
+          </div>
+          <div class="blog-card__body">
+            <p class="blog-card__excerpt">Sono felicissima di darvi il benvenuto sul blog di Ganesha Deva, lo studio di yoga e viaggi esperienziali che ho fondato</p>
+            <a href="#" class="btn-secondary">Scopri</a>
+          </div>
+        </article>
+      </div>
+      <div class="blog__cta">
+        <a href="#" class="btn-primary">Vedi Gli Articoli</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       CONTATTI
+       ======================================== -->
+  <div class="wave-transition">
+    <img src="img/decorations/wave-3.svg" alt="">
+  </div>
+
+  <section class="contatti section" id="contatti">
+    <div class="container">
+      <div class="contatti__inner">
+        <div class="contatti__info">
+          <h2 class="contatti__title">Vieni nel Ganesha studio ad incontrare i nostri esperti di yoga</h2>
+        </div>
+        <div class="contatti__form-wrap">
+          <h3 class="contatti__form-title">Contattaci</h3>
+          <p class="contatti__form-desc">Compila il modulo di contatto qui sotto o utilizza le informazioni di contatto fornite per raggiungerci direttamente.</p>
+          <form class="contatti__form" action="#" method="POST">
+            <div class="contatti__form-row">
+              <input type="text" name="name" placeholder="Name" class="contatti__input" required>
+              <input type="email" name="email" placeholder="Email" class="contatti__input" required>
+            </div>
+            <textarea name="message" placeholder="Message" class="contatti__textarea" rows="5" required></textarea>
+            <button type="submit" class="btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       NEWSLETTER
+       ======================================== -->
+  <div class="wave-transition">
+    <img src="img/decorations/wave-5.svg" alt="">
+  </div>
+
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter__inner">
+        <div class="newsletter__text">
+          <h2 class="newsletter__title">Iscriviti alla Newsletter</h2>
+          <p class="newsletter__desc">Riceverai gratuitamente pillole di formazione, lezioni e molto altro.</p>
+        </div>
+        <form class="newsletter__form" action="#" method="POST">
+          <input type="text" name="cognome" placeholder="Cognome:" class="newsletter__input" required>
+          <input type="text" name="nome" placeholder="Nome:" class="newsletter__input" required>
+          <input type="email" name="email" placeholder="Email:" class="newsletter__input" required>
+          <label class="newsletter__privacy">
+            <input type="checkbox" name="privacy" required>
+            <span>Accetto i termini della <a href="#">Privacy Policy</a> e desidero iscrivermi alla newsletter "Ganesha Deva" per ricevere aggiornamenti esclusivi su eventi, articoli, meditazioni e offerte speciali.</span>
+          </label>
+          <button type="submit" class="btn-primary">Iscriviti</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <!-- ========================================
        FOOTER
@@ -281,6 +390,11 @@
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/events-loader.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    loadEvents('eventi-list', 'data/events.json', 'list');
+    loadViaggi('viaggi-list', 'data/viaggi.json');
+  </script>
 </body>
 </html>

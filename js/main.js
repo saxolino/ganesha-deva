@@ -180,4 +180,46 @@ document.addEventListener('DOMContentLoaded', function() {
       start: 'top 80%'
     }
   });
+
+  // --- Eventi rows stagger ---
+  // Note: events are loaded async, so use a setTimeout to wait for DOM population
+  setTimeout(function() {
+    gsap.from('.evento-row', {
+      x: -30,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.6,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.eventi__list',
+        start: 'top 85%'
+      }
+    });
+  }, 500);
+
+  // --- Viaggi ---
+  gsap.from('.viaggi__header', {
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    scrollTrigger: { trigger: '.viaggi', start: 'top 80%' }
+  });
+
+  // --- Contatti form ---
+  gsap.from('.contatti__inner > *', {
+    y: 30,
+    opacity: 0,
+    stagger: 0.2,
+    duration: 0.8,
+    scrollTrigger: { trigger: '.contatti', start: 'top 80%' }
+  });
+
+  // --- Newsletter ---
+  gsap.from('.newsletter__inner > *', {
+    y: 20,
+    opacity: 0,
+    stagger: 0.2,
+    duration: 0.8,
+    scrollTrigger: { trigger: '.newsletter', start: 'top 85%' }
+  });
 });

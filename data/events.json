@@ -1,0 +1,42 @@
+[
+  {
+    "id": "corpo-voce-laboratori",
+    "titolo": "Viaggio nel Corpo e nella Voce - Laboratori Esperenziali",
+    "data": "2026-04-01",
+    "periodo": "Due giovedi al mese",
+    "luogo": "Montecosaro",
+    "descrizione": "Laboratori esperienziali dedicati al corpo e alla voce",
+    "immagine": "img/eventi/yoga-al-mare.jpg",
+    "attivo": true
+  },
+  {
+    "id": "yoga-al-mare",
+    "titolo": "Yoga al Mare",
+    "data": "2026-06-01",
+    "periodo": "Giugno - Luglio",
+    "luogo": "Civitanova Marche",
+    "descrizione": "Sessioni di yoga sulla spiaggia all'alba",
+    "immagine": "img/eventi/yoga-al-mare.jpg",
+    "attivo": true
+  },
+  {
+    "id": "yoga-summer-vibes",
+    "titolo": "Yoga Summer Vibes",
+    "data": "2026-07-01",
+    "periodo": "Luglio - Agosto - Settembre",
+    "luogo": "Speciale Sicilia",
+    "descrizione": "Retreat estivo di yoga e benessere in Sicilia",
+    "immagine": "img/eventi/summer-vibes.jpg",
+    "attivo": true
+  },
+  {
+    "id": "solstizio-estate",
+    "titolo": "Solstizio d'estate",
+    "data": "2026-06-21",
+    "periodo": "21 Giugno",
+    "luogo": "Civitanova Marche",
+    "descrizione": "Celebrazione del solstizio con pratica yoga al tramonto",
+    "immagine": "img/eventi/solstizio.jpg",
+    "attivo": true
+  }
+]

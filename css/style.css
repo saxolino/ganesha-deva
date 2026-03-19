@@ -954,3 +954,391 @@ a {
   font-size: 12px;
   padding: 10px 24px;
 }
+
+/* ========================================
+   EVENTI
+   ======================================== */
+
+.eventi {
+  background: var(--teal);
+  color: var(--white);
+}
+
+.eventi__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+.eventi__eyebrow {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.eventi__title {
+  color: var(--white);
+  margin-top: 8px;
+}
+
+.eventi__subtitle {
+  color: rgba(0, 0, 0, 0.7);
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.evento-row {
+  display: flex;
+  align-items: center;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: padding 0.4s var(--ease-smooth);
+}
+
+.evento-row:hover {
+  padding-left: 16px;
+}
+
+.evento-date {
+  width: 70px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.evento-date__day {
+  display: block;
+  font-size: 32px;
+  color: var(--magenta);
+  line-height: 1;
+  font-family: var(--font-heading);
+}
+
+.evento-date__month {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.evento-info {
+  flex: 1;
+  margin-left: 28px;
+}
+
+.evento-location {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--magenta);
+  letter-spacing: 1px;
+}
+
+.evento-info__title {
+  font-size: 22px;
+  color: var(--white);
+  margin-top: 4px;
+}
+
+.evento-info__desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+}
+
+.evento-arrow {
+  font-size: 20px;
+  color: var(--magenta);
+  opacity: 0;
+  transition: all 0.4s var(--ease-smooth);
+}
+
+.evento-row:hover .evento-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.eventi__cta {
+  text-align: center;
+  margin-top: 48px;
+}
+
+/* ========================================
+   VIAGGI
+   ======================================== */
+
+.viaggi {
+  background: var(--cream);
+}
+
+.viaggi__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+.viaggi__title {
+  color: var(--magenta);
+}
+
+.viaggi__subtitle {
+  margin-top: 16px;
+  color: var(--dark);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.viaggio-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: center;
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .viaggio-card {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+.viaggio-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.viaggio-card__body {
+  padding: 32px;
+}
+
+.viaggio-card__body h3 {
+  color: var(--magenta);
+  margin-bottom: 8px;
+}
+
+.viaggio-card__location {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--teal);
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.viaggio-card__body p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.viaggi__cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ========================================
+   BLOG
+   ======================================== */
+
+.blog {
+  background: var(--cream-dark);
+}
+
+.blog__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.blog__title {
+  color: var(--magenta);
+}
+
+.blog__subtitle {
+  margin-top: 12px;
+  color: var(--dark);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.blog-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.blog-card__image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.blog-card__body {
+  padding: 24px;
+}
+
+.blog-card__excerpt {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.blog__cta {
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* ========================================
+   CONTATTI
+   ======================================== */
+
+.contatti {
+  background: var(--magenta);
+  color: var(--white);
+}
+
+.contatti__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .contatti__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+}
+
+.contatti__title {
+  color: var(--white);
+  font-size: clamp(28px, 3vw, 42px);
+}
+
+.contatti__form-wrap {
+  background: var(--cream);
+  color: var(--dark);
+  padding: 40px;
+  border-radius: 16px;
+}
+
+.contatti__form-title {
+  color: var(--magenta);
+}
+
+.contatti__form-desc {
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.contatti__form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .contatti__form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contatti__input,
+.contatti__textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(169, 10, 124, 0.15);
+  border-radius: 8px;
+  background: var(--cream-dark);
+  font-family: var(--font-heading);
+  font-size: 15px;
+  color: var(--dark);
+  outline: none;
+  transition: border 0.3s;
+}
+
+.contatti__input:focus,
+.contatti__textarea:focus {
+  border-color: var(--magenta);
+}
+
+.contatti__textarea {
+  margin-top: 12px;
+  resize: vertical;
+}
+
+.contatti__form .btn-primary {
+  margin-top: 16px;
+}
+
+/* ========================================
+   NEWSLETTER
+   ======================================== */
+
+.newsletter {
+  background: var(--magenta);
+  color: var(--white);
+  padding: 80px 0;
+}
+
+.newsletter__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .newsletter__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+}
+
+.newsletter__title {
+  color: var(--white);
+}
+
+.newsletter__desc {
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 12px;
+}
+
+.newsletter__input {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.newsletter__privacy {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.newsletter__privacy a {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.newsletter__privacy input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.newsletter .btn-primary {
+  background: var(--teal);
+}
