@@ -64,28 +64,38 @@
     });
   });
 
-  /* ---------- Video play/pause ---------- */
-  document.querySelectorAll('.video-play').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var video = btn.parentElement.querySelector('video');
-      if (!video) return;
-      if (video.paused) {
-        video.muted = false;
-        video.play();
-        btn.classList.add('is-hidden');
-      } else {
-        video.pause();
-        btn.classList.remove('is-hidden');
-      }
+  /* ---------- Video modal ---------- */
+  var modal = document.getElementById('videoModal');
+  var modalVideo = modal ? modal.querySelector('video') : null;
+
+  // Open modal from intro play button or video trigger
+  document.querySelectorAll('[data-video-trigger]').forEach(function(trigger) {
+    trigger.addEventListener('click', function() {
+      if (!modal || !modalVideo) return;
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      modalVideo.play();
     });
-    var video = btn.parentElement.querySelector('video');
-    if (video) {
-      video.addEventListener('click', function() {
-        video.pause();
-        btn.classList.remove('is-hidden');
-      });
-    }
   });
+
+  // Close modal
+  function closeVideoModal() {
+    if (!modal || !modalVideo) return;
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    modalVideo.pause();
+    modalVideo.currentTime = 0;
+  }
+
+  if (modal) {
+    modal.querySelector('.video-modal__close')?.addEventListener('click', closeVideoModal);
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeVideoModal();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeVideoModal();
+    });
+  }
 
   /* ---------- Hero slideshow autoplay ---------- */
   var heroSlides = document.querySelectorAll('.hero__slide');
