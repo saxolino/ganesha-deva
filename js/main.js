@@ -124,7 +124,11 @@
     '.areas__header, .lezioni__header, .percorsi__header, .eventi__header, .viaggi__header, .blog__header, ' +
     '.contatti__inner, .newsletter__inner, ' +
     '.carousel-wrap, ' +
-    '.alternating-item'
+    '.alternating-item, ' +
+    '.detail-body__text, .detail-gallery__item, .detail-event-info, .detail-schedule, ' +
+    '.detail-related__header, .related-card, .detail-cta, ' +
+    '.workshop-card, .instructor-card, .location-card, ' +
+    '.blog-listing-card, .detail-instructors, .detail-locations'
   );
 
   // Add reveal-ready class (sets initial hidden state via CSS)

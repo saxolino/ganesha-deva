@@ -103,7 +103,9 @@
   /* --- EVENTI grid card --- */
   function buildEventGridCard(evt) {
     var date = parseDate(evt.data);
-    var card = mkEl('div', 'evento-card');
+    var card = document.createElement(evt.link ? 'a' : 'div');
+    card.className = 'evento-card';
+    if (evt.link) card.href = evt.link;
 
     var imgW = mkEl('div', 'evento-card__image');
     imgW.appendChild(mkImg(evt.immagine, evt.titolo));
@@ -152,7 +154,7 @@
     body.appendChild(loc);
     body.appendChild(mkText('p', null, v.descrizione));
     var link = document.createElement('a');
-    link.href = 'viaggi.html';
+    link.href = v.link || 'viaggi.html';
     link.className = 'btn btn--primary';
     link.textContent = 'Scopri';
     body.appendChild(link);

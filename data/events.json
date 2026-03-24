@@ -6,7 +6,8 @@
     "periodo": "Due giovedi al mese",
     "luogo": "Montecosaro",
     "descrizione": "Laboratori esperienziali dedicati al corpo e alla voce",
-    "immagine": "img/eventi/yoga-al-mare.jpg",
+    "immagine": "img/corpo-e-voce/hero.jpg",
+    "link": "corpo-e-voce.html",
     "attivo": true
   },
   {
@@ -16,7 +17,8 @@
     "periodo": "Giugno - Luglio",
     "luogo": "Civitanova Marche",
     "descrizione": "Sessioni di yoga sulla spiaggia all'alba",
-    "immagine": "img/eventi/yoga-al-mare.jpg",
+    "immagine": "img/yoga-al-mare/hero.jpeg",
+    "link": "yoga-al-mare.html",
     "attivo": true
   },
   {
@@ -26,7 +28,8 @@
     "periodo": "Luglio - Agosto - Settembre",
     "luogo": "Speciale Sicilia",
     "descrizione": "Retreat estivo di yoga e benessere in Sicilia",
-    "immagine": "img/eventi/summer-vibes.jpg",
+    "immagine": "img/corsi-yoga/hero.jpg",
+    "link": "corsi-yoga.html",
     "attivo": true
   },
   {
@@ -36,7 +39,8 @@
     "periodo": "21 Giugno",
     "luogo": "Civitanova Marche",
     "descrizione": "Celebrazione del solstizio con pratica yoga al tramonto",
-    "immagine": "img/eventi/solstizio.jpg",
+    "immagine": "img/solstizio/hero.jpg",
+    "link": "solstizio-destate.html",
     "attivo": true
   }
 ]
