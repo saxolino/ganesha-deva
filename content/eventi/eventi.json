@@ -1,5 +1,0 @@
-{
-  "layout": "layouts/detail.njk",
-  "permalink": "/eventi/{{ page.fileSlug }}/",
-  "type": "evento"
-}

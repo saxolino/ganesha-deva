@@ -1,5 +1,0 @@
-{
-  "layout": "layouts/detail.njk",
-  "permalink": "/percorsi/{{ page.fileSlug }}/",
-  "type": "percorso"
-}

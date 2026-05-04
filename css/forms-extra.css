@@ -1,3 +1,13 @@
+/* Honeypot field — invisibile per umani, compilato dai bot */
+.hp-field {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 /* Form status feedback (newsletter + contact AJAX) */
 .form-status {
   margin-top: 12px;

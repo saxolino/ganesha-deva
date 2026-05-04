@@ -26,10 +26,17 @@
     return n;
   }
 
-  function mkImg(src, alt) {
+  function mkImg(src, alt, opts) {
     var i = document.createElement('img');
     i.src = src;
     i.alt = alt || '';
+    i.decoding = 'async';
+    if (opts && opts.eager) {
+      i.loading = 'eager';
+      i.fetchPriority = 'high';
+    } else {
+      i.loading = 'lazy';
+    }
     return i;
   }
 
@@ -69,14 +76,14 @@
   }
 
   /* ---------- Cards ---------- */
-  function buildEventCard(evt) {
+  function buildEventCard(evt, idx) {
     var date = parseDate(evt.data);
     var card = document.createElement(evt.link ? 'a' : 'div');
     card.className = 'evento-carousel-card';
     if (evt.link) card.href = evt.link;
 
     var imgW = mkEl('div', 'evento-carousel-card__image');
-    imgW.appendChild(mkImg(evt.immagine, evt.titolo));
+    imgW.appendChild(mkImg(evt.immagine, evt.titolo, { eager: idx < 2 }));
     imgW.appendChild(mkText('span', 'evento-carousel-card__badge', date.day + ' ' + date.month));
 
     var body = mkEl('div', 'evento-carousel-card__body');
@@ -90,14 +97,14 @@
     return card;
   }
 
-  function buildEventGridCard(evt) {
+  function buildEventGridCard(evt, idx) {
     var date = parseDate(evt.data);
     var card = document.createElement(evt.link ? 'a' : 'div');
     card.className = 'evento-card';
     if (evt.link) card.href = evt.link;
 
     var imgW = mkEl('div', 'evento-card__image');
-    imgW.appendChild(mkImg(evt.immagine, evt.titolo));
+    imgW.appendChild(mkImg(evt.immagine, evt.titolo, { eager: idx < 2 }));
     imgW.appendChild(mkText('span', 'evento-card__badge', date.day + ' ' + date.month));
 
     var body = mkEl('div', 'evento-card__body');
@@ -110,13 +117,13 @@
     return card;
   }
 
-  function buildPercorsoCard(p) {
+  function buildPercorsoCard(p, idx) {
     var card = document.createElement('a');
     card.className = 'percorso-card';
     card.href = p.link || '/percorsi/';
 
     var imgW = mkEl('div', 'percorso-card__image');
-    imgW.appendChild(mkImg(p.immagine, p.titolo));
+    imgW.appendChild(mkImg(p.immagine, p.titolo, { eager: idx < 2 }));
 
     var body = mkEl('div', 'percorso-card__body');
     body.appendChild(mkText('h3', null, p.titolo));
@@ -128,11 +135,11 @@
     return card;
   }
 
-  function buildViaggioCard(v) {
+  function buildViaggioCard(v, idx) {
     var card = mkEl('div', 'viaggio-card');
 
     var imgW = mkEl('div', 'viaggio-card__image');
-    imgW.appendChild(mkImg(v.immagine, v.titolo));
+    imgW.appendChild(mkImg(v.immagine, v.titolo, { eager: idx < 2 }));
 
     var body = mkEl('div', 'viaggio-card__body');
     body.appendChild(mkText('h3', null, v.titolo));
@@ -149,12 +156,12 @@
     return card;
   }
 
-  function buildBlogCard(post) {
+  function buildBlogCard(post, idx) {
     var date = parseDate(post.data);
     var card = mkEl('article', 'blog-card');
 
     var imgW = mkEl('div', 'blog-card__image');
-    imgW.appendChild(mkImg(post.immagine, post.titolo));
+    imgW.appendChild(mkImg(post.immagine, post.titolo, { eager: idx < 2 }));
 
     var body = mkEl('div', 'blog-card__body');
     body.appendChild(mkText('span', 'blog-card__date', date.day + ' ' + date.month + ' ' + date.year));
@@ -183,7 +190,7 @@
     if (active[0] && active[0].data) {
       active.sort(function (a, b) { return new Date(a.data) - new Date(b.data); });
     }
-    var cards = active.map(builder);
+    var cards = active.map(function (item, idx) { return builder(item, idx); });
     container.textContent = '';
     if (layout === 'carousel') {
       container.appendChild(wrapCarousel(cards));

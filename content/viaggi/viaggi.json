@@ -1,5 +1,0 @@
-{
-  "layout": "layouts/detail.njk",
-  "permalink": "/viaggi/{{ page.fileSlug }}/",
-  "type": "viaggio"
-}

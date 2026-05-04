@@ -5,12 +5,21 @@
    - BREVO_API_KEY      (https://account.brevo.com/security/api_keys)
    - CONTACT_TO         (es. info@ganeshaexperience.it)
    - CONTACT_FROM       (mittente verificato in Brevo, es. no-reply@ganeshaexperience.it)
+   - SITE_ORIGIN        (opzionale, default https://www.ganeshaexperience.it)
 */
 
+const { applyCors, rateLimited, isBot, escapeHtml } = require("./_helpers");
+
 module.exports = async (req, res) => {
+  if (applyCors(req, res)) return;
+
   if (req.method !== "POST") {
-    res.setHeader("Allow", "POST");
+    res.setHeader("Allow", "POST, OPTIONS");
     return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  if (rateLimited(req)) {
+    return res.status(429).json({ error: "Troppe richieste. Riprova tra un minuto." });
   }
 
   let body = req.body;
@@ -18,6 +27,10 @@ module.exports = async (req, res) => {
     try { body = JSON.parse(body); } catch { body = {}; }
   }
   body = body || {};
+
+  if (isBot(body)) {
+    return res.status(200).json({ message: "Grazie!" });
+  }
 
   const name = String(body.name || "").trim();
   const email = String(body.email || "").trim();
@@ -71,12 +84,3 @@ module.exports = async (req, res) => {
     return res.status(500).json({ error: "Errore interno. Riprova più tardi." });
   }
 };
-
-function escapeHtml(s) {
-  return String(s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}

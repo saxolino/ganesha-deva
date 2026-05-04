@@ -4,12 +4,21 @@
    ENV richieste:
    - BREVO_API_KEY        (stessa di /api/contact)
    - BREVO_LIST_ID        (id numerico della lista Brevo, es. 5)
+   - SITE_ORIGIN          (opzionale, default https://www.ganeshaexperience.it)
 */
 
+const { applyCors, rateLimited, isBot } = require("./_helpers");
+
 module.exports = async (req, res) => {
+  if (applyCors(req, res)) return;
+
   if (req.method !== "POST") {
-    res.setHeader("Allow", "POST");
+    res.setHeader("Allow", "POST, OPTIONS");
     return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  if (rateLimited(req)) {
+    return res.status(429).json({ error: "Troppe richieste. Riprova tra un minuto." });
   }
 
   let body = req.body;
@@ -17,6 +26,10 @@ module.exports = async (req, res) => {
     try { body = JSON.parse(body); } catch { body = {}; }
   }
   body = body || {};
+
+  if (isBot(body)) {
+    return res.status(200).json({ message: "Iscrizione registrata." });
+  }
 
   const nome = String(body.nome || "").trim();
   const cognome = String(body.cognome || "").trim();
