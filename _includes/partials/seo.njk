@@ -1,0 +1,162 @@
+{%- set pageTitle = title or (site.name + " — Yoga, Movimento e Meditazione in Sicilia") -%}
+{%- set pageDesc = description or "Ganesha Deva: lezioni, percorsi, eventi e viaggi esperienziali di yoga in Sicilia." -%}
+{%- set pageImage = hero or "/img/hero/cala-rossa.jpg" -%}
+{%- set pageUrl = site.url + page.url -%}
+{%- set pageImageAbs = (site.url + pageImage) if pageImage and pageImage[0] == '/' else pageImage -%}
+{%- set fullTitle = pageTitle if (not title or site.name in pageTitle) else (pageTitle + " — " + site.name) -%}
+<title>{{ fullTitle }}</title>
+<meta name="description" content="{{ pageDesc }}">
+<link rel="canonical" href="{{ pageUrl }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ pageDesc }}">
+<meta property="og:image" content="{{ pageImageAbs }}">
+<meta property="og:type" content="{% if type %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ pageUrl }}">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ pageTitle }}">
+<meta name="twitter:description" content="{{ pageDesc }}">
+<meta name="twitter:image" content="{{ pageImageAbs }}">
+{%- if type == 'evento' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {{ title | dump | safe }},
+  "description": {{ pageDesc | dump | safe }},
+  "image": "{{ pageImageAbs }}",
+  "startDate": "{{ date | dateIso }}T09:00:00+02:00",
+  {%- if dataFine %}"endDate": "{{ dataFine | dateIso }}T18:00:00+02:00",{% endif %}
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": {{ (luogo or site.name + ' Studio') | dump | safe }},
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.studio.streetAddress }}",
+      "addressLocality": {{ (luogo or site.studio.addressLocality) | dump | safe }},
+      "addressRegion": "{{ site.studio.addressRegion }}",
+      "postalCode": "{{ site.studio.postalCode }}",
+      "addressCountry": "{{ site.studio.addressCountry }}"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "email": "{{ site.email }}"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ pageUrl }}",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "{{ date | dateIso }}"
+  }
+}
+</script>
+{%- elif type == 'viaggio' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": {{ title | dump | safe }},
+  "description": {{ pageDesc | dump | safe }},
+  "image": "{{ pageImageAbs }}",
+  "touristType": "Yoga retreat travelers",
+  {%- if date %}"departureTime": "{{ date | dateIso }}T00:00:00+02:00",{% endif %}
+  {%- if dataFine %}"arrivalTime": "{{ dataFine | dateIso }}T23:59:59+02:00",{% endif %}
+  {%- if locations and locations.length %}
+  "itinerary": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {%- for l in locations %}
+      {
+        "@type": "ListItem",
+        "position": {{ loop.index }},
+        "item": {
+          "@type": "Place",
+          "name": {{ l.label | dump | safe }}
+        }
+      }{% if not loop.last %},{% endif %}
+      {%- endfor %}
+    ]
+  },
+  {%- endif %}
+  "provider": {
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "email": "{{ site.email }}"
+  }
+}
+</script>
+{%- elif type == 'percorso' %}
+{%- set instructorName = (instructors[0].name if instructors and instructors.length else site.defaultInstructor.name) -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": {{ title | dump | safe }},
+  "description": {{ pageDesc | dump | safe }},
+  "image": "{{ pageImageAbs }}",
+  "provider": {
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "sameAs": "{{ site.url }}"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "https://schema.org/OfflineEventAttendanceMode",
+    "courseWorkload": "PT2H",
+    "instructor": {
+      "@type": "Person",
+      "name": {{ instructorName | dump | safe }}
+    },
+    "location": {
+      "@type": "Place",
+      "name": "{{ site.name }} Studio",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ site.studio.streetAddress }}",
+        "addressLocality": "{{ site.studio.addressLocality }}",
+        "addressRegion": "{{ site.studio.addressRegion }}",
+        "postalCode": "{{ site.studio.postalCode }}",
+        "addressCountry": "{{ site.studio.addressCountry }}"
+      }
+    }
+  },
+  "offers": {
+    "@type": "Offer",
+    "category": "Paid",
+    "url": "{{ pageUrl }}",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+{%- else %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.name }}",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.url }}/img/logo.png",
+  "email": "{{ site.email }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ site.studio.streetAddress }}",
+    "addressLocality": "{{ site.studio.addressLocality }}",
+    "addressRegion": "{{ site.studio.addressRegion }}",
+    "postalCode": "{{ site.studio.postalCode }}",
+    "addressCountry": "{{ site.studio.addressCountry }}"
+  },
+  "sameAs": [
+    "{{ site.social.instagram }}",
+    "{{ site.social.facebook }}"
+  ]
+}
+</script>
+{%- endif %}

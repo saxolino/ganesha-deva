@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+permalink: /lezioni.html
+title: "Lezioni di Yoga"
+description: "Lezioni di yoga specializzate: Yoga in Volo, Acro Yoga, Integrale, Anukalana e Sciamanico. Scopri il tuo stile con Ganesha Deva in Sicilia."
+hero: /img/lezioni/yoga-in-volo.jpg
+activeNav: lezioni
+---
+
+<section class="page-hero page-hero--teal">
+  <div class="container">
+    <h1 class="page-hero__title">Lezioni</h1>
+    <p class="page-hero__subtitle">Esplora i particolari stili di yoga e meditazione che pratichiamo nella nostra scuola.</p>
+  </div>
+  <div class="wave-transition page-hero__wave">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,64 C120,90 240,100 360,88 C480,76 540,40 720,48 C900,56 1020,96 1200,80 C1320,68 1400,52 1440,56 L1440,120 L0,120 Z" fill="#F8F2EB"/></svg>
+  </div>
+</section>
+
+<section class="page-content section">
+  <div class="container">
+    <div class="page-content__header">
+      <span class="eyebrow">Lezioni</span>
+      <h2>Esplora la Pratica Olistica: Lezioni Specializzate di Yoga e Meditazione</h2>
+    </div>
+    <div class="lezioni-page__grid">
+      {%- set cards = [
+        {href:"/percorsi/yoga-in-volo/", img:"/img/lezioni/yoga-in-volo.jpg", title:"Yoga In Volo"},
+        {href:"/percorsi/acro-yoga/", img:"/img/lezioni/acro-yoga.jpg", title:"Acro Yoga"},
+        {href:"/percorsi/yoga-integrale/", img:"/img/lezioni/yoga-integrale.jpg", title:"Yoga Integrale"},
+        {href:"/percorsi/yoga-anukalana/", img:"/img/lezioni/yoga-anukalana.jpg", title:"Yoga Anukalana"},
+        {href:"/percorsi/yoga-sciamanico/", img:"/img/lezioni/yoga-sciamanico.jpg", title:"Yoga Sciamanico"}
+      ] -%}
+      {% for c in cards %}
+      <a href="{{ c.href }}" class="lezione-card">
+        <img src="{{ c.img }}" alt="{{ c.title }}" loading="lazy" decoding="async">
+        <div class="lezione-card__overlay"><h3>{{ c.title }}</h3></div>
+        <span class="lezione-card__arrow">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,85 @@
+---
+layout: layouts/base.njk
+---
+{% set activeNav = collectionName %}
+
+<section class="page-hero page-hero--teal">
+  <div class="container">
+    <h1 class="page-hero__title">{{ pageHeroTitle }}</h1>
+    <p class="page-hero__subtitle">{{ pageHeroSubtitle }}</p>
+  </div>
+  <div class="wave-transition page-hero__wave">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,64 C120,90 240,100 360,88 C480,76 540,40 720,48 C900,56 1020,96 1200,80 C1320,68 1400,52 1440,56 L1440,120 L0,120 Z" fill="#F8F2EB"/></svg>
+  </div>
+</section>
+
+<section class="section" style="background: var(--cream);">
+  <div class="container">
+    {% if listingHeader %}
+    <div class="page-content__header">
+      <span class="eyebrow"{% if collectionName == 'eventi' %} style="color: var(--teal);"{% endif %}>{{ listingHeader.eyebrow }}</span>
+      <h2>{{ listingHeader.heading }}</h2>
+    </div>
+    {% endif %}
+
+    {% if listingIntro %}
+    <p style="max-width: 800px; margin: 0 auto 48px; text-align: center; font-size: 18px; line-height: 1.8;">{{ listingIntro }}</p>
+    {% endif %}
+
+    {% if collectionName == 'eventi' %}
+    <div class="eventi-page__grid">
+      {% for item in collections.eventi %}
+      <a href="{{ item.url }}" class="evento-card">
+        <div class="evento-card__image">
+          <img src="{{ item.data.hero }}" alt="{{ item.data.title }}" loading="lazy" decoding="async">
+          <span class="evento-card__badge">{{ item.data.date | dateBadge }}</span>
+        </div>
+        <div class="evento-card__body">
+          <span class="evento-card__location">{{ item.data.luogo }}</span>
+          <h3>{{ item.data.title }}</h3>
+          <p>{{ item.data.periodo }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% elif collectionName == 'viaggi' %}
+    <div>
+      {% for item in collections.viaggi %}
+      <div class="viaggio-card">
+        <div class="viaggio-card__image">
+          <img src="{{ item.data.hero }}" alt="{{ item.data.title }}" loading="lazy" decoding="async">
+        </div>
+        <div class="viaggio-card__body">
+          <h3>{{ item.data.title }}</h3>
+          <p class="viaggio-card__location">{{ item.data.luogo }} — {{ item.data.periodo }}</p>
+          <p>{{ item.data.description }}</p>
+          <a href="{{ item.url }}" class="btn btn--primary">Scopri</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% elif collectionName == 'percorsi' %}
+    <div class="alternating-list">
+      {% for item in collections.percorsi %}
+      <div class="alternating-item">
+        <div class="alternating-item__image">
+          <img src="{{ item.data.hero }}" alt="{{ item.data.title }}" loading="lazy" decoding="async">
+        </div>
+        <div class="alternating-item__text">
+          <h3>{{ item.data.title }}</h3>
+          <p>{{ item.data.description }}</p>
+          <a href="{{ item.url }}" class="btn btn--primary">Scopri</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if collectionName == 'eventi' %}
+    <div style="text-align: center; margin-top: 48px;">
+      <p style="margin-bottom: 16px; font-size: 18px;">Prenota ora o richiedi informazioni:</p>
+      <a href="https://wa.me/{{ site.whatsapp }}" class="btn btn--primary" target="_blank" rel="noopener">Contattaci su Whatsapp</a>
+    </div>
+    {% endif %}
+  </div>
+</section>

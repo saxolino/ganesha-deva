@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /data/_generated.json
+
+Sitemap: https://www.ganeshaexperience.it/sitemap.xml

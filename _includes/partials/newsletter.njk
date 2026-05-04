@@ -1,0 +1,22 @@
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter__inner">
+      <div class="newsletter__text">
+        <h2 class="newsletter__title">Iscriviti alla Newsletter</h2>
+        <p class="newsletter__desc">Riceverai gratuitamente pillole di formazione, lezioni e molto altro.</p>
+      </div>
+      <form class="newsletter__form" data-form="newsletter" action="/api/newsletter" method="POST">
+        <input type="text" name="cognome" placeholder="Cognome:" aria-label="Cognome" class="newsletter__input" required>
+        <input type="text" name="nome" placeholder="Nome:" aria-label="Nome" class="newsletter__input" required>
+        <input type="email" name="email" placeholder="Email:" aria-label="Email" class="newsletter__input" required>
+        <label class="newsletter__privacy">
+          <input type="checkbox" name="privacy" required>
+          <span>Accetto i termini della <a href="/privacy-policy.html">Privacy Policy</a> e desidero iscrivermi alla newsletter "Ganesha Deva" per ricevere aggiornamenti esclusivi su eventi, articoli, meditazioni e offerte speciali.</span>
+        </label>
+        <input type="text" name="website_url" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true">
+        <button type="submit" class="btn btn--primary">Iscriviti</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>

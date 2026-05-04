@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% include "partials/seo.njk" %}
+  <link rel="icon" type="image/png" href="/img/logo.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/forms-extra.css">
+</head>
+<body>
+  {% include "partials/header.njk" %}
+
+  {{ content | safe }}
+
+  {% include "partials/newsletter.njk" %}
+  {% include "partials/footer.njk" %}
+
+  <script src="/js/vendor/gsap.min.js" defer></script>
+  <script src="/js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="/js/content-loader.js" defer></script>
+  <script src="/js/forms.js" defer></script>
+  <script src="/js/main.js" defer></script>
+  {% block scripts %}{% endblock %}
+  <script src="/js/cookie-consent.js"></script>
+</body>
+</html>
