@@ -1,0 +1,14 @@
+{
+  "name": "ganesha-deva",
+  "version": "1.0.0",
+  "description": "Sito Ganesha Deva - Yoga, movimento e meditazione",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve --quiet",
+    "watch": "eleventy --watch"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

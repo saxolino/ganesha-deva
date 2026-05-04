@@ -1,0 +1,23 @@
+---
+permalink: /data/_generated.json
+eleventyExcludeFromCollections: true
+---
+{%- macro card(item) -%}
+{
+"id": {{ (item.data.slug or item.fileSlug) | dump | safe }},
+"titolo": {{ item.data.title | dump | safe }},
+"data": {{ (item.data.date | dateIso) | dump | safe }},
+"dataFine": {% if item.data.dataFine %}{{ (item.data.dataFine | dateIso) | dump | safe }}{% else %}null{% endif %},
+"periodo": {{ (item.data.periodo or "") | dump | safe }},
+"luogo": {{ (item.data.luogo or "") | dump | safe }},
+"descrizione": {{ (item.data.description or "") | dump | safe }},
+"immagine": {{ (item.data.hero or "") | dump | safe }},
+"link": {{ item.url | dump | safe }},
+"attivo": true
+}
+{%- endmacro -%}
+{
+"eventi": [{% for i in collections.eventi %}{{ card(i) }}{% if not loop.last %},{% endif %}{% endfor %}],
+"viaggi": [{% for i in collections.viaggi %}{{ card(i) }}{% if not loop.last %},{% endif %}{% endfor %}],
+"percorsi": [{% for i in collections.percorsi %}{{ card(i) }}{% if not loop.last %},{% endif %}{% endfor %}]
+}

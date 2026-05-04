@@ -1,0 +1,132 @@
+---
+layout: layouts/base.njk
+headerScrolled: true
+---
+{%- set typeLabel = {
+  'evento': 'Eventi',
+  'viaggio': 'Viaggi Esperienziali',
+  'percorso': 'Percorsi'
+}[type] -%}
+{%- set typeNav = {
+  'evento': 'eventi',
+  'viaggio': 'viaggi',
+  'percorso': 'percorsi'
+}[type] -%}
+{% set activeNav = typeNav %}
+
+<section class="detail-hero">
+  <div class="detail-hero__image"><img src="{{ hero }}" alt="{{ title }}"></div>
+  <div class="detail-hero__overlay"></div>
+  <div class="detail-hero__content container">
+    <span class="eyebrow detail-hero__eyebrow">{{ typeLabel }}</span>
+    <h1 class="detail-hero__title">{{ title }}</h1>
+  </div>
+  <div class="detail-hero__wave">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,64 C120,90 240,100 360,88 C480,76 540,40 720,48 C900,56 1020,96 1200,80 C1320,68 1400,52 1440,56 L1440,120 L0,120 Z" fill="#F8F2EB"/></svg>
+  </div>
+</section>
+
+{% if description or content %}
+<section class="detail-body section">
+  <div class="detail-body__inner">
+    <div class="detail-body__text">
+      {% if description %}<p>{{ description }}</p>{% endif %}
+      {{ content | safe }}
+    </div>
+
+    {% if schedule and schedule.length %}
+    <div class="detail-schedule">
+      {% for s in schedule %}
+      <div class="detail-schedule__item">
+        <span class="detail-schedule__day">{{ s.day }}</span>
+        <span class="detail-schedule__desc">{{ s.desc }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% if locations and locations.length %}
+<section class="section">
+  <div class="detail-locations">
+    {% for l in locations %}
+    <div class="location-card">
+      <img src="{{ l.image }}" alt="{{ l.label }}" loading="lazy">
+      <span class="location-card__label">{{ l.label }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if sections and sections.length %}
+{% for sec in sections %}
+<section class="section">
+  <div class="detail-body__inner">
+    <div class="detail-event-info">
+      {% if sec.heading %}<h3>{{ sec.heading }}</h3>{% endif %}
+      {% if sec.body %}<p>{{ sec.body }}</p>{% endif %}
+    </div>
+  </div>
+</section>
+{% endfor %}
+{% endif %}
+
+{% if instructors and instructors.length %}
+<section class="section">
+  <div class="detail-instructors">
+    {% for i in instructors %}
+    <div class="instructor-card">
+      <div class="instructor-card__image"><img src="{{ i.image }}" alt="{{ i.name }}" loading="lazy"></div>
+      <h4 class="instructor-card__name">{{ i.name }}</h4>
+      <span class="instructor-card__role">{{ i.role }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if gallery and gallery.length %}
+<section class="detail-gallery">
+  <div class="detail-gallery__grid detail-gallery__grid--featured">
+    {% for img in gallery %}
+    <div class="detail-gallery__item"><img src="{{ img }}" alt="{{ title }}" loading="lazy"></div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="detail-cta">
+  <div class="container">
+    <h2 class="detail-cta__title">Prenota ora o richiedi informazioni</h2>
+    <a href="https://wa.me/{{ site.whatsapp }}" class="btn--whatsapp" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.612.616l4.527-1.468A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.315 0-4.458-.764-6.182-2.054l-.432-.334-2.882.934.961-2.845-.366-.453A9.963 9.963 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Contattaci su WhatsApp
+    </a>
+  </div>
+</section>
+
+{% set related = collections[typeNav] | excludeSlug(page.fileSlug) | head(4) %}
+{% if related and related.length %}
+<section class="detail-related">
+  <div class="container">
+    <div class="detail-related__header">
+      <span class="eyebrow">Esplora</span>
+      <h2>Scopri Anche</h2>
+    </div>
+  </div>
+  <div class="detail-related__grid">
+    {% for r in related %}
+    <a href="{{ r.url }}" class="related-card">
+      <div class="related-card__image"><img src="{{ r.data.hero }}" alt="{{ r.data.title }}" loading="lazy"></div>
+      <div class="related-card__body">
+        <span class="related-card__category">{{ typeLabel }}</span>
+        <h4>{{ r.data.title }}</h4>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

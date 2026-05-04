@@ -1,0 +1,73 @@
+{%- set pageTitle = title or (site.name + " — Yoga, Movimento e Meditazione in Sicilia") -%}
+{%- set pageDesc = description or "Ganesha Deva: lezioni, percorsi, eventi e viaggi esperienziali di yoga in Sicilia." -%}
+{%- set pageImage = hero or "/img/hero/cala-rossa.jpg" -%}
+{%- set pageUrl = site.url + page.url -%}
+{%- set pageImageAbs = (site.url + pageImage) if pageImage and pageImage[0] == '/' else pageImage -%}
+<title>{{ pageTitle }}{% if title %} — {{ site.name }}{% endif %}</title>
+<meta name="description" content="{{ pageDesc }}">
+<link rel="canonical" href="{{ pageUrl }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ pageDesc }}">
+<meta property="og:image" content="{{ pageImageAbs }}">
+<meta property="og:type" content="{% if type %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ pageUrl }}">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+{%- if type == 'evento' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {{ title | dump | safe }},
+  "description": {{ pageDesc | dump | safe }},
+  "image": "{{ pageImageAbs }}",
+  "startDate": "{{ date | dateIso }}",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": {{ (luogo or 'Ganesha Deva Studio') | dump | safe }},
+    "address": {{ (luogo or 'Montecosaro, MC, Italia') | dump | safe }}
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}"
+  }
+}
+</script>
+{%- elif type == 'viaggio' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": {{ title | dump | safe }},
+  "description": {{ pageDesc | dump | safe }},
+  "image": "{{ pageImageAbs }}",
+  "touristType": "Yoga retreat travelers",
+  {%- if date %}"departureTime": "{{ date | dateIso }}",{% endif %}
+  {%- if dataFine %}"arrivalTime": "{{ dataFine | dateIso }}",{% endif %}
+  "provider": {
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}"
+  }
+}
+</script>
+{%- elif type == 'percorso' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": {{ title | dump | safe }},
+  "description": {{ pageDesc | dump | safe }},
+  "image": "{{ pageImageAbs }}",
+  "provider": {
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "sameAs": "{{ site.url }}"
+  }
+}
+</script>
+{%- endif %}

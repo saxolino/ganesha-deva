@@ -1,0 +1,37 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- set staticPages = [
+  {url: "/", priority: "1.0"},
+  {url: "/lezioni.html", priority: "0.8"},
+  {url: "/eventi/", priority: "0.9"},
+  {url: "/viaggi/", priority: "0.9"},
+  {url: "/percorsi/", priority: "0.9"},
+  {url: "/blog.html", priority: "0.6"},
+  {url: "/benvenuti.html", priority: "0.6"},
+  {url: "/contatti.html", priority: "0.7"},
+  {url: "/privacy-policy.html", priority: "0.3"}
+] %}
+{%- for p in staticPages %}
+  <url>
+    <loc>{{ site.url }}{{ p.url }}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>{{ p.priority }}</priority>
+  </url>
+{%- endfor %}
+{%- for c in ["eventi", "viaggi", "percorsi"] %}
+{%- for item in collections[c] %}
+  <url>
+    <loc>{{ site.url }}{{ item.url }}</loc>
+    {%- if item.data.date %}
+    <lastmod>{{ item.data.date | dateIso }}</lastmod>
+    {%- endif %}
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+{%- endfor %}
+{%- endfor %}
+</urlset>

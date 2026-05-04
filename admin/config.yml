@@ -1,0 +1,168 @@
+backend:
+  name: github
+  repo: saxolino/ganesha-deva
+  branch: main
+
+publish_mode: simple
+media_folder: img
+public_folder: /img
+
+site_url: https://www.ganeshaexperience.it
+display_url: https://www.ganeshaexperience.it
+logo_url: /img/logo.png
+locale: it
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  - name: eventi
+    label: Eventi
+    label_singular: Evento
+    folder: content/eventi
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    media_folder: "/img/{{slug}}"
+    public_folder: "/img/{{slug}}"
+    summary: "{{title}} — {{date | date('DD/MM/YYYY')}} — {{luogo}}"
+    sortable_fields: [date, title]
+    view_filters:
+      - { label: "Attivi", field: attivo, pattern: true }
+      - { label: "Nascosti", field: attivo, pattern: false }
+    fields:
+      - { name: title, label: "Titolo", widget: string }
+      - { name: description, label: "Descrizione breve (per card e SEO)", widget: text, hint: "Max 160 caratteri" }
+      - { name: hero, label: "Immagine principale (hero)", widget: image }
+      - { name: date, label: "Data inizio", widget: datetime, time_format: false, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD" }
+      - { name: periodo, label: "Periodo (testo libero, es. \"Giugno - Luglio\")", widget: string, required: false }
+      - { name: luogo, label: "Luogo", widget: string }
+      - name: schedule
+        label: "Orari / Calendario"
+        widget: list
+        required: false
+        summary: "{{fields.day}} — {{fields.desc}}"
+        fields:
+          - { name: day, label: "Giorno e orario", widget: string }
+          - { name: desc, label: "Tipo di pratica / descrizione", widget: string }
+      - name: instructors
+        label: "Insegnanti"
+        widget: list
+        required: false
+        summary: "{{fields.name}} — {{fields.role}}"
+        fields:
+          - { name: name, label: "Nome", widget: string }
+          - { name: role, label: "Ruolo", widget: string }
+          - { name: image, label: "Foto", widget: image }
+      - name: gallery
+        label: "Galleria immagini"
+        widget: list
+        required: false
+        field: { name: image, label: "Immagine", widget: image }
+      - name: sections
+        label: "Sezioni descrittive aggiuntive"
+        widget: list
+        required: false
+        summary: "{{fields.heading}}"
+        fields:
+          - { name: heading, label: "Sotto-titolo", widget: string }
+          - { name: body, label: "Testo paragrafo", widget: text }
+      - { name: body, label: "Testo libero (Markdown opzionale)", widget: markdown, required: false }
+      - { name: attivo, label: "Pubblicato (visibile sul sito)", widget: boolean, default: true }
+
+  - name: viaggi
+    label: Viaggi Esperienziali
+    label_singular: Viaggio
+    folder: content/viaggi
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    media_folder: "/img/{{slug}}"
+    public_folder: "/img/{{slug}}"
+    summary: "{{title}} — {{periodo}} — {{luogo}}"
+    sortable_fields: [date, title]
+    view_filters:
+      - { label: "Attivi", field: attivo, pattern: true }
+      - { label: "Nascosti", field: attivo, pattern: false }
+    fields:
+      - { name: title, label: "Titolo", widget: string }
+      - { name: description, label: "Descrizione breve (per card e SEO)", widget: text, hint: "Max 160 caratteri" }
+      - { name: hero, label: "Immagine principale (hero)", widget: image }
+      - { name: date, label: "Data inizio", widget: datetime, time_format: false, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD" }
+      - { name: dataFine, label: "Data fine", widget: datetime, time_format: false, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", required: false }
+      - { name: periodo, label: "Periodo (es. \"Luglio 2026\")", widget: string }
+      - { name: luogo, label: "Destinazione", widget: string }
+      - name: locations
+        label: "Tappe del viaggio"
+        widget: list
+        required: false
+        summary: "{{fields.label}}"
+        fields:
+          - { name: label, label: "Nome luogo", widget: string }
+          - { name: image, label: "Immagine", widget: image }
+      - name: instructors
+        label: "Insegnanti / Guide"
+        widget: list
+        required: false
+        summary: "{{fields.name}} — {{fields.role}}"
+        fields:
+          - { name: name, label: "Nome", widget: string }
+          - { name: role, label: "Ruolo", widget: string }
+          - { name: image, label: "Foto", widget: image }
+      - name: gallery
+        label: "Galleria immagini"
+        widget: list
+        required: false
+        field: { name: image, label: "Immagine", widget: image }
+      - name: sections
+        label: "Sezioni descrittive (programma, alloggio, ecc.)"
+        widget: list
+        required: false
+        summary: "{{fields.heading}}"
+        fields:
+          - { name: heading, label: "Sotto-titolo", widget: string }
+          - { name: body, label: "Testo paragrafo", widget: text }
+      - { name: body, label: "Testo libero (Markdown opzionale)", widget: markdown, required: false }
+      - { name: attivo, label: "Pubblicato", widget: boolean, default: true }
+
+  - name: percorsi
+    label: Percorsi
+    label_singular: Percorso
+    folder: content/percorsi
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    media_folder: "/img/{{slug}}"
+    public_folder: "/img/{{slug}}"
+    summary: "{{title}}"
+    sortable_fields: [title]
+    view_filters:
+      - { label: "Attivi", field: attivo, pattern: true }
+      - { label: "Nascosti", field: attivo, pattern: false }
+    fields:
+      - { name: title, label: "Titolo", widget: string }
+      - { name: description, label: "Descrizione breve (per card e SEO)", widget: text, hint: "Max 160 caratteri" }
+      - { name: hero, label: "Immagine principale (hero)", widget: image }
+      - name: gallery
+        label: "Galleria immagini"
+        widget: list
+        required: false
+        field: { name: image, label: "Immagine", widget: image }
+      - name: sections
+        label: "Sezioni descrittive aggiuntive"
+        widget: list
+        required: false
+        summary: "{{fields.heading}}"
+        fields:
+          - { name: heading, label: "Sotto-titolo", widget: string }
+          - { name: body, label: "Testo paragrafo", widget: text }
+      - { name: body, label: "Testo libero (Markdown opzionale)", widget: markdown, required: false }
+      - { name: attivo, label: "Pubblicato", widget: boolean, default: true }
