@@ -3,7 +3,8 @@
 {%- set pageImage = hero or "/img/hero/cala-rossa.jpg" -%}
 {%- set pageUrl = site.url + page.url -%}
 {%- set pageImageAbs = (site.url + pageImage) if pageImage and pageImage[0] == '/' else pageImage -%}
-<title>{{ pageTitle }}{% if title %} — {{ site.name }}{% endif %}</title>
+{%- set fullTitle = pageTitle if (not title or site.name in pageTitle) else (pageTitle + " — " + site.name) -%}
+<title>{{ fullTitle }}</title>
 <meta name="description" content="{{ pageDesc }}">
 <link rel="canonical" href="{{ pageUrl }}">
 <meta property="og:title" content="{{ pageTitle }}">
@@ -27,7 +28,12 @@
   "location": {
     "@type": "Place",
     "name": {{ (luogo or 'Ganesha Deva Studio') | dump | safe }},
-    "address": {{ (luogo or 'Montecosaro, MC, Italia') | dump | safe }}
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": {{ (luogo or 'Montecosaro') | dump | safe }},
+      "addressRegion": "MC",
+      "addressCountry": "IT"
+    }
   },
   "organizer": {
     "@type": "Organization",

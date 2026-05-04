@@ -25,14 +25,14 @@ activeNav: lezioni
     </div>
     <div class="lezioni-page__grid">
       {%- set cards = [
-        {href:"yoga-in-volo.html", img:"/img/lezioni/yoga-in-volo.jpg", title:"Yoga In Volo"},
-        {href:"acro-yoga.html", img:"/img/lezioni/acro-yoga.jpg", title:"Acro Yoga"},
-        {href:"yoga-integrale.html", img:"/img/lezioni/yoga-integrale.jpg", title:"Yoga Integrale"},
-        {href:"yoga-anukalana.html", img:"/img/lezioni/yoga-anukalana.jpg", title:"Yoga Anukalana"},
-        {href:"yoga-sciamanico.html", img:"/img/lezioni/yoga-sciamanico.jpg", title:"Yoga Sciamanico"}
+        {href:"/percorsi/yoga-in-volo/", img:"/img/lezioni/yoga-in-volo.jpg", title:"Yoga In Volo"},
+        {href:"/percorsi/acro-yoga/", img:"/img/lezioni/acro-yoga.jpg", title:"Acro Yoga"},
+        {href:"/percorsi/yoga-integrale/", img:"/img/lezioni/yoga-integrale.jpg", title:"Yoga Integrale"},
+        {href:"/percorsi/yoga-anukalana/", img:"/img/lezioni/yoga-anukalana.jpg", title:"Yoga Anukalana"},
+        {href:"/percorsi/yoga-sciamanico/", img:"/img/lezioni/yoga-sciamanico.jpg", title:"Yoga Sciamanico"}
       ] -%}
       {% for c in cards %}
-      <a href="/{{ c.href }}" class="lezione-card">
+      <a href="{{ c.href }}" class="lezione-card">
         <img src="{{ c.img }}" alt="{{ c.title }}" loading="lazy" decoding="async">
         <div class="lezione-card__overlay"><h3>{{ c.title }}</h3></div>
         <span class="lezione-card__arrow">

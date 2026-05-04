@@ -15,7 +15,7 @@ headerScrolled: true
 {% set activeNav = typeNav %}
 
 <section class="detail-hero">
-  <div class="detail-hero__image"><img src="{{ hero }}" alt="{{ title }}"></div>
+  <div class="detail-hero__image"><img src="{{ hero }}" alt="{{ title }}" decoding="async" fetchpriority="high"></div>
   <div class="detail-hero__overlay"></div>
   <div class="detail-hero__content container">
     <span class="eyebrow detail-hero__eyebrow">{{ typeLabel }}</span>

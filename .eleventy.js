@@ -21,6 +21,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("percorsi", (api) =>
     api.getFilteredByGlob("content/percorsi/*.md")
       .filter((i) => i.data.attivo !== false)
+      .sort((a, b) => (a.data.title || "").localeCompare(b.data.title || "", "it"))
   );
 
   eleventyConfig.addFilter("dateIso", (d) => {
