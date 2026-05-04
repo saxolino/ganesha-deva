@@ -8,6 +8,9 @@
     "dev": "eleventy --serve --quiet",
     "watch": "eleventy --watch"
   },
+  "dependencies": {
+    "gsap": "3.12.5"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
   }

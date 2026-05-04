@@ -5,6 +5,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("data/blog.json");
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/gsap/dist/gsap.min.js": "js/vendor/gsap.min.js",
+    "node_modules/gsap/dist/ScrollTrigger.min.js": "js/vendor/ScrollTrigger.min.js"
+  });
 
   const sortByDate = (a, b) => new Date(a.data.date || 0) - new Date(b.data.date || 0);
 

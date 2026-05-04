@@ -27,13 +27,14 @@ headerScrolled: true
       <div class="contatti__form-wrap">
         <h3 class="contatti__form-title">Contattaci</h3>
         <p class="contatti__form-desc">Compila il modulo di contatto qui sotto o utilizza le informazioni di contatto fornite per raggiungerci direttamente.</p>
-        <form class="contatti__form" action="#" method="POST">
+        <form class="contatti__form" data-form="contact" action="/api/contact" method="POST">
           <div class="contatti__form-row">
-            <input type="text" name="name" placeholder="Nome" class="contatti__input" required>
-            <input type="email" name="email" placeholder="Email" class="contatti__input" required>
+            <input type="text" name="name" placeholder="Nome" aria-label="Nome" class="contatti__input" required>
+            <input type="email" name="email" placeholder="Email" aria-label="Email" class="contatti__input" required>
           </div>
-          <textarea name="message" placeholder="Messaggio" class="contatti__textarea" rows="5" required></textarea>
+          <textarea name="message" placeholder="Messaggio" aria-label="Messaggio" class="contatti__textarea" rows="5" required></textarea>
           <button type="submit" class="btn btn--primary">Invia</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>

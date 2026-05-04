@@ -1,0 +1,53 @@
+/* Form status feedback (newsletter + contact AJAX) */
+.form-status {
+  margin-top: 12px;
+  font-size: 14px;
+  min-height: 20px;
+  font-family: var(--font-ui, inherit);
+}
+.form-status[data-state="loading"] { color: #856404; }
+.form-status[data-state="success"] { color: #155724; }
+.form-status[data-state="error"] { color: #721c24; }
+
+/* Google Maps lazy placeholder (GDPR) */
+.contatti__map[data-map-mount] {
+  position: relative;
+  background: linear-gradient(135deg, #f5f0eb 0%, #e8ddd2 100%);
+  border-radius: 16px;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.map-placeholder__btn {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(169, 10, 124, 0.2);
+  border-radius: 12px;
+  padding: 24px 32px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--magenta, #A90A7C);
+  font-family: var(--font-ui, inherit);
+  font-size: 15px;
+  font-weight: 500;
+  transition: transform 0.2s, box-shadow 0.2s;
+  max-width: 320px;
+  text-align: center;
+}
+.map-placeholder__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.map-placeholder__btn small {
+  color: #666;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.contatti__map iframe {
+  display: block;
+}

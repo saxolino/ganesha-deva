@@ -58,6 +58,17 @@ Se preferisci non configurare OAuth, Sveltia permette il login con un Personal A
 3. Copia il token
 4. Apri `/admin/`, clicca "Login with PAT", incolla il token.
 
+## Form serverless (newsletter + contatti)
+
+I form newsletter e contatti inviano POST AJAX a `/api/newsletter` e `/api/contact` (Vercel serverless functions). Per attivare l'invio email reale, configura queste env vars nel progetto Vercel:
+
+- `BREVO_API_KEY` — https://account.brevo.com/security/api_keys (free tier 300 email/giorno)
+- `CONTACT_TO` — email destinazione contatti (default: `info@ganeshaexperience.it`)
+- `CONTACT_FROM` — mittente verificato in Brevo (default: stesso di CONTACT_TO)
+- `BREVO_LIST_ID` — ID numerico della lista Brevo per la newsletter (es. `5`)
+
+Senza env vars i form rispondono 200 mock (utile in dev). I dati ricevuti finiscono nei log Vercel ma non vengono inviati a nessuno.
+
 ## Cosa puoi gestire
 
 Tre collection editabili:
