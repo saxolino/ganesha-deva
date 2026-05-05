@@ -99,7 +99,7 @@ headerScrolled: true
     <ol class="vd-sections__list">
       {% for sec in sections %}
       <li class="vd-sections__item">
-        <span class="vd-sections__num" aria-hidden="true">{{ "%02d" | format(loop.index) }}</span>
+        <span class="vd-sections__num" aria-hidden="true">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
         <div class="vd-sections__content">
           {% if sec.heading %}<h3 class="vd-sections__heading">{{ sec.heading }}</h3>{% endif %}
           {% if sec.body %}<p class="vd-sections__body">{{ sec.body }}</p>{% endif %}
