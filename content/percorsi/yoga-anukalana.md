@@ -1,6 +1,6 @@
 ---
-title: "Yoga Anukalana"
-description: "Stile di yoga che fonde danza, yoga e arti marziali. Esplora il movimento con Vinyasa Flow Yoga."
+title: Yoga Anukalana
+description: Stile di yoga che fonde Danza, Yoga e Arti marziali. Esplora il movimento con Vinyasa Flow Yoga.
 hero: /img/yoga-anukalana/hero.jpg
 gallery:
   - /img/yoga-anukalana/gallery-1.jpg
