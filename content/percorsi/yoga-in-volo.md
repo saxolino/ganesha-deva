@@ -1,6 +1,6 @@
 ---
-title: "Yoga in Volo"
-description: "Disciplina moderna che combina yoga tradizionale con amache sospese, per leggerezza, allungamento e inversioni in sicurezza."
+title: Yoga in Volo
+description: Disciplina moderna che combina le tecniche dello yoga tradizionale con l'uso di morbide amache sospese.
 hero: /img/yoga-in-volo/hero.jpg
 gallery:
   - /img/yoga-in-volo/gallery-1.jpeg
