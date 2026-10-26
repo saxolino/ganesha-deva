@@ -1,6 +1,6 @@
 ---
-title: "Yoga Integrale"
-description: "Uno degli stili più antichi e completi: armonizza corpo, mente, emozioni e spirito attraverso le 8 Anga della tradizione."
+title: Yoga Integrale
+description: 'Uno degli stili più antichi e completi: armonizza Corpo, Mente, Emozioni e Spirito.'
 hero: /img/yoga-integrale/hero.jpg
 gallery:
   - /img/yoga-integrale/gallery-1.jpg
