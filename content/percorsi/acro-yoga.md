@@ -1,6 +1,6 @@
 ---
-title: "Acro Yoga"
-description: "Disciplina che unisce yoga, acrobazia e thai massage. Fiducia, connessione e gioco con Ganesha Experience."
+title: Acro Yoga
+description: Disciplina che unisce Yoga, Acrobazia e Thai massage. Fiducia, Connessione e Gioco.
 hero: /img/acro-yoga/hero.jpeg
 gallery:
   - /img/acro-yoga/gallery-1.jpeg
