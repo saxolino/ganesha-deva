@@ -1,6 +1,6 @@
 ---
-title: "Bagno di Gong"
-description: "Esperienza di unione fisica e mentale attraverso rilassamento profondo sulle amache e vibrazioni del gong."
+title: Bagno di Gong
+description: Esperienza di unione fisica e mentale attraverso rilassamento profondo sulle amache con le vibrazioni del gong.
 hero: /img/bagno-di-gong/hero.jpg
 gallery:
   - /img/bagno-di-gong/gallery-1.jpeg
