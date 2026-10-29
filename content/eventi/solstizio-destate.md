@@ -1,23 +1,22 @@
 ---
-title: "Solstizio d'Estate - Anima Invicta"
-date: "2026-06-21"
-periodo: "21 Giugno"
-luogo: "Civitanova Marche"
+title: Solstizio d'Estate - Anima Invicta
 description: "Celebrazione del Solstizio d'Estate: yoga al tramonto, canto psichico e sonorità ancestrali sulla spiaggia di Civitanova Marche."
 hero: /img/solstizio/hero.jpg
+date: 2026-06-21
+periodo: 21 Giugno
+luogo: Civitanova Marche
 gallery:
   - /img/solstizio/gallery-1.jpeg
-  - /img/solstizio/gallery-2.jpeg
   - /img/solstizio/gallery-3.jpeg
   - /img/solstizio/gallery-4.jpeg
   - /img/solstizio/gallery-5.jpeg
 sections:
-  - heading: "Dayana Orazi - Pratiche Yoga"
-    body: "Insegnante di Yoga Integrale, Yoga Anukalana, Yoga Sciamanico, titolare e fondatrice Ganesha Deva Spazio Yoga."
-  - heading: "Sara Tesei - Canto Psichico"
-    body: "Voce e canto psichico, tamburo sciamanico, oceanico, koshi."
-  - heading: "Francesco Bigoni - Sonorità Ancestrali"
-    body: "Musicista, handpan, didgeridoo, percussioni."
+  - heading: Dayana Orazi - Pratiche Yoga
+    body: Insegnante di Yoga Integrale, Yoga Anukalana, Yoga Sciamanico, titolare e fondatrice Ganesha Deva Spazio Yoga.
+  - heading: Sara Tesei - Canto Psichico
+    body: Voce e canto psichico, tamburo sciamanico, oceanico, koshi.
+  - heading: Francesco Bigoni - Sonorità Ancestrali
+    body: Musicista, handpan, didgeridoo, percussioni.
 attivo: true
 ---
 
