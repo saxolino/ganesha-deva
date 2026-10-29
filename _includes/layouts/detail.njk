@@ -96,10 +96,10 @@ headerScrolled: true
       <span class="vd-eyebrow">L'esperienza</span>
       <h2 class="vd-section-title">Cosa ti aspetta</h2>
     </header>
-    <ol class="vd-sections__list{% if sections_numbers == false %} vd-sections__list--nonum{% endif %}">
+    <ol class="vd-sections__list{% if sections_hide_numbers %} vd-sections__list--nonum{% endif %}">
       {% for sec in sections %}
       <li class="vd-sections__item">
-        {% if sections_numbers != false %}<span class="vd-sections__num" aria-hidden="true">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>{% endif %}
+        {% if not sections_hide_numbers %}<span class="vd-sections__num" aria-hidden="true">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>{% endif %}
         <div class="vd-sections__content">
           {% if sec.heading %}<h3 class="vd-sections__heading">{{ sec.heading }}</h3>{% endif %}
           {% if sec.body %}<p class="vd-sections__body">{{ sec.body }}</p>{% endif %}
