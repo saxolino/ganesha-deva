@@ -1423,6 +1423,7 @@ body::after {
   align-items: start;
 }
 .vd-sections__item:last-child { border-bottom: none; }
+.vd-sections__list--nonum .vd-sections__item { grid-template-columns: 1fr; }
 .vd-sections__num {
   font-family: var(--font-display);
   font-style: italic;

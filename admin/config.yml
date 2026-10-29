@@ -71,6 +71,7 @@ collections:
         fields:
           - { name: heading, label: "Sotto-titolo", widget: string }
           - { name: body, label: "Testo paragrafo", widget: text }
+      - { name: sections_numbers, label: "Mostra i numeri (01, 02, 03…) accanto alle sezioni", widget: boolean, default: true, required: false }
       - { name: body, label: "Testo libero (Markdown opzionale)", widget: markdown, required: false }
       - { name: attivo, label: "Pubblicato (visibile sul sito)", widget: boolean, default: true }
 
@@ -128,6 +129,7 @@ collections:
         fields:
           - { name: heading, label: "Sotto-titolo", widget: string }
           - { name: body, label: "Testo paragrafo", widget: text }
+      - { name: sections_numbers, label: "Mostra i numeri (01, 02, 03…) accanto alle sezioni", widget: boolean, default: true, required: false }
       - { name: body, label: "Testo libero (Markdown opzionale)", widget: markdown, required: false }
       - { name: attivo, label: "Pubblicato", widget: boolean, default: true }
 
@@ -164,5 +166,6 @@ collections:
         fields:
           - { name: heading, label: "Sotto-titolo", widget: string }
           - { name: body, label: "Testo paragrafo", widget: text }
+      - { name: sections_numbers, label: "Mostra i numeri (01, 02, 03…) accanto alle sezioni", widget: boolean, default: true, required: false }
       - { name: body, label: "Testo libero (Markdown opzionale)", widget: markdown, required: false }
       - { name: attivo, label: "Pubblicato", widget: boolean, default: true }

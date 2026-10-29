@@ -4,6 +4,8 @@ module.exports = {
   language: "it",
   whatsapp: "393292950550",
   year: new Date().getFullYear(),
+  // cambia a ogni build: forza i browser a riscaricare CSS/JS dopo una pubblicazione
+  build: Date.now().toString(36),
   email: "info@ganeshaexperience.it",
   studio: {
     streetAddress: "Via Roma 180",
