@@ -12,7 +12,5 @@ schedule:
     desc: Il percorso si sviluppa su 8 incontri ciascuno portatore di un tema esistenziale e spirituale.
   - day: Evento su prenotazione
     desc: Primo Incontro Gratuito
-attivo: false
+attivo: true
 ---
-
-Speciale Sicilia - Luglio, Agosto, Settembre al Wind Resort.
