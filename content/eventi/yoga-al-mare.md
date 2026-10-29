@@ -8,8 +8,6 @@ luogo: Civitanova Marche
 schedule:
   - day: Lunedì e Giovedì 19:00 - 21:00
     desc: Yoga Integrale / Anukalana
-  - day: Mercoledì mattina 07:00 - 08:00
-    desc: Yoga Anukalana
   - day: Nota
     desc: Solo su prenotazione
 gallery:
