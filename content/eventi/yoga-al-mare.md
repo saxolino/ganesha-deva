@@ -14,6 +14,8 @@ schedule:
     desc: Solo su prenotazione
 gallery:
   - /img/yoga-al-mare/Yoga al Mare con Cri.jpg
+  - /img/yoga-al-mare/Yoga al Mare con Cri (1).jpg
+  - /img/yoga-al-mare/Yoga al Mare con Cri (2).jpg
 attivo: true
 ---
 
