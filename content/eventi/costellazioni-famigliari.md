@@ -1,7 +1,7 @@
 ---
 title: Costellazioni Famigliari
 description: Un metodo terapeutico ed esperenziale, per esplorare legami invisibili e portare luce ed armonia all'interno del nostro sistema familiare.
-hero: /img/costellazioni-famigliari/COSTELLAZIONI FAMIGLIARI -CLAUDIA MARCONI.jpg
+hero: /img/costellazioni-famigliari/COSTELLAZIONI FAMIGLIARI.jpg
 date: 2026-10-24
 periodo: Da Ottobre
 luogo: Ganesha Deva Spazio Yoga, Montecosaro
