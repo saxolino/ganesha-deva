@@ -23,4 +23,4 @@ gallery:
 attivo: true
 ---
 
-**Le Costellazioni** sono
+**Le Costellazioni** possono essere uno strumento di liberazione straordinario.
