@@ -7,7 +7,7 @@ periodo: Da Ottobre
 luogo: Ganesha Deva Spazio Yoga, Montecosaro
 schedule:
   - day: Un sabato al mese dalle 14:30 alle 19:30
-    desc: Le costellazioni possono essere uno strumento di liberazione straordinario. Sono un metodo terapeutico basato sulla psicologia sistemica. All’interno di un sistema (la nostra famiglia), a livello inconscio, ereditiamo pesi emotivi, paure o dinamiche irrisolte da chi è venuto prima di noi.
+    desc: Le costellazioni possono essere uno strumento di liberazione straordinario. Sono un metodo terapeutico basato sulla psicologia sistemica. All’interno di un sistema (la nostra famiglia), a livello inconscio, ereditiamo pesi emotivi, paure o dinamiche irrisolte da chi è venuto prima di noi. Il partecipante che desidera lavorare su un proprio blocco viene aiutato a "mettere in scena" la propria dinamica familiare, chiedendo ad altri partecipanti del gruppo di rappresentare i membri della sua famiglia. Osservando le posizioni nello spazio e ascoltando le emozioni che emergono, si crea una mappa visiva e chiarissima dell’inconscio
   - day: Percorso ad Incontri Mensili di Gruppo
     desc: Evento su prenotazione
 instructors:
