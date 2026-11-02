@@ -8,8 +8,10 @@ luogo: Ganesha Deva Spazio Yoga, Montecosaro
 schedule:
   - day: Un sabato al mese dalle 14:30 alle 19:30
     desc: Durante l'incontrio si farà esperienza di un metodo terapeutico basato sulla pscologia sistemica. All’interno di un sistema (la nostra famiglia), a livello inconscio, ereditiamo pesi emotivi, paure o dinamiche irrisolte da chi è venuto prima di noi. Il partecipante che desidera lavorare su un proprio blocco viene aiutato a "mettere in scena" la propria dinamica familiare, chiedendo ad altri partecipanti del gruppo di rappresentare i membri della sua famiglia. Osservando le posizioni nello spazio e ascoltando le emozioni che emergono, si crea una mappa visiva e chiarissima dell’inconscio
-  - day: Percorso ad Incontri Mensili di Gruppo
+  - day: BENEFICI
     desc: L' Obiettivo è Portare Consapevolezza. Vedere la propria storia da una prospettiva nuova e chiarificatrice. "Restituire" i pesi emotivi a chi appartengono veramente. Trovare o ritrovare il “giusto posto"  nel sistema familiare. Sbloccare l'energia vitale per poter vivere finalmente la propria vita, liberi da copioni inconsci.
+  - day: Percorso di Incontri Mensili
+    desc: evento su prenotazione
 instructors:
   - name: Dott.ssa Claudia Marconi
     role: Psicologa, Psicodiagnosta , Specilaizzata in Costellazioni Familiari , Rebirthing, Theta Healing
