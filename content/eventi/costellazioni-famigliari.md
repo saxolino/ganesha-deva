@@ -6,9 +6,9 @@ date: 2026-10-24
 periodo: Da Ottobre
 luogo: Ganesha Deva Spazio Yoga, Montecosaro
 schedule:
-  - day: Percorso ad Incontri Mensili
+  - day: Percorso ad Incontri Mensili di Gruppo
     desc: Sono un metodo terapeutico basato sulla psicologia sistemica. All’interno di un sistema (la nostra famiglia), a livello inconscio, ereditiamo pesi emotivi, paure o dinamiche irrisolte da chi è venuto prima di noi. Le costellazioni possono essere uno strumento di liberazione straordinario.
-  - day: Il percorso si sviluppa su incontri mensili di gruppo.
+  - day: Un sabato al mese dalle 14:30 alle 19:30
     desc: Evento su prenotazione
 instructors:
   - name: Dott.ssa Claudia Marconi
