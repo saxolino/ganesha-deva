@@ -16,7 +16,7 @@ schedule:
     desc: Evento su prenotazione
 instructors:
   - name: Dott.ssa Claudia Marconi
-    role: Psicologa, Psicodiagnosta , Specilaizzata in Costellazioni Familiari , Rebirthing, Theta Healing
+    role: Psicologa, Psicodiagnosta , Specializzata in Costellazioni Familiari , Rebirthing, Theta Healing
     image: /img/costellazioni-famigliari/Claudia Marconi.jpg
 gallery:
   - /img/costellazioni-famigliari/1.png
