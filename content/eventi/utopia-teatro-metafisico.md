@@ -16,5 +16,10 @@ instructors:
   - name: Valentina Baldassarri
     role: Attrice, scrittrice e  ricercatrice spirituale
     image: /img/utopia-teatro-metafisico/Foto Video- Vale.jpg
+gallery:
+  - /img/utopia-teatro-metafisico/utopia-carosello1.jpg
+  - /img/utopia-teatro-metafisico/utopia-carosello2.jpg
+  - /img/utopia-teatro-metafisico/utopia-carosello3.jpg
+  - /img/utopia-teatro-metafisico/utopia-carosello4.jpg
 attivo: true
 ---
