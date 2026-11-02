@@ -20,5 +20,5 @@ gallery:
   - /img/costellazioni-famigliari/3.png
   - /img/costellazioni-famigliari/4.png
   - /img/costellazioni-famigliari/5.png
-attivo: false
+attivo: true
 ---
