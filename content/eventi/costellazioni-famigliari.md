@@ -11,7 +11,7 @@ schedule:
   - day: BENEFICI
     desc: L' Obiettivo è Portare Consapevolezza. Vedere la propria storia da una prospettiva nuova e chiarificatrice. "Restituire" i pesi emotivi a chi appartengono veramente. Trovare o ritrovare il “giusto posto"  nel sistema familiare. Sbloccare l'energia vitale per poter vivere finalmente la propria vita, liberi da copioni inconsci.
   - day: Percorso di Incontri Mensili
-    desc: evento su prenotazione
+    desc: Evento su prenotazione
 instructors:
   - name: Dott.ssa Claudia Marconi
     role: Psicologa, Psicodiagnosta , Specilaizzata in Costellazioni Familiari , Rebirthing, Theta Healing
