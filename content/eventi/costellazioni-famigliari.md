@@ -7,7 +7,7 @@ periodo: Da Ottobre
 luogo: Ganesha Deva Spazio Yoga, Montecosaro
 schedule:
   - day: Un sabato al mese dalle 14:30 alle 19:30
-    desc: Una serie di incontri dove  si farà esperienza di un metodo terapeutico basato sulla pscologia sistemica. All’interno di un sistema (la nostra famiglia), a livello inconscio, ereditiamo pesi emotivi, paure o dinamiche irrisolte da chi è venuto prima di noi. Il partecipante che desidera lavorare su un proprio blocco viene aiutato a "mettere in scena" la propria dinamica familiare, chiedendo ad altri partecipanti del gruppo di rappresentare i membri della sua famiglia. Osservando le posizioni nello spazio e ascoltando le emozioni che emergono, si crea una mappa visiva e chiarissima dell’inconscio
+    desc: Una serie di incontri dove  si farà esperienza di un metodo terapeutico basato sulla pscologia sistemica. All’interno di un sistema (la nostra famiglia), a livello inconscio, ereditiamo pesi emotivi, paure o dinamiche irrisolte da chi è venuto prima di noi.
   - day: Come funzionano?
     desc: Il partecipante che desidera lavorare su un proprio blocco viene aiutato a "mettere in scena" la propria dinamica familiare, chiedendo ad altri partecipanti del gruppo di rappresentare i membri della sua famiglia. Osservando le posizioni nello spazio e ascoltando le emozioni che emergono, si crea una mappa visiva e chiarissima dell’inconscio
   - day: BENEFICI
